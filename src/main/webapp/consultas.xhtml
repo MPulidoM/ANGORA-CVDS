@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+    <title>Consulta Page</title>
+
+</h:head>
+<h:body>
+    <h:form>
+        <h1>Consulta</h1>
+        <p>Palabras</p>
+        <p:inputText value="#{ideasBean.keyWords}" />
+        <p:commandButton class="button" value="Login" update="table1"/>
+        <div id="contenedor">
+            <h:dataTable id="table1" value="#{ideasBean.consultKeywords()}" var="item" border="1">
+                <f:facet name="header">
+                    <h:outputText value="Ofertas disponibles en esas fechas" />
+                </f:facet>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Nombre" />
+                    </f:facet>
+                    <h:outputText value="#{item.name}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Palabra Clave" />
+                    </f:facet>
+                    <h:outputText value="#{item.keyWords}"/>
+                </h:column>
+            </h:dataTable>
+        </div>
+    </h:form>
+</h:body>
+</html>

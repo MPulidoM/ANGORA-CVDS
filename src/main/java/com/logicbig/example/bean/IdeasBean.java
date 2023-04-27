@@ -84,7 +84,7 @@ public class IdeasBean {
     }
 
     public String getKeyWords() {
-        return keyWords;
+        return this.keyWords;
     }
 
     public void setKeyWords(String keyWords) {
@@ -122,11 +122,14 @@ public class IdeasBean {
     }
 
 
-    public List<Ideas> consultKeywords (String keywords){
+    public List<Ideas> consultKeywords (){
         List<Ideas> ideas = new ArrayList<>();
-        for ( Ideas idea: ideaService.getAllIdeas()){
-            if (idea.getKeyWords().equals(keywords)){
-                ideas.add(idea);
+        if (keyWords != null) {
+            for (Ideas idea : ideaService.getAllIdeas()) {
+                if (idea.getKeyWords().contains(keyWords)) {
+                    System.out.println("//////////////////" + keyWords + idea.getName());
+                    ideas.add(idea);
+                }
             }
         }
         return ideas;
@@ -135,10 +138,12 @@ public class IdeasBean {
     public List<Ideas> groupedByIdeas (String proponentArea){
         List<Ideas> ideas = new ArrayList<>();
         for ( Ideas idea: ideaService.getAllIdeas()){
-            if (idea.getProponentArea().equals(proponentArea)){
+            if ( idea.getProponentArea().equals(proponentArea)){
                 ideas.add(idea);
             }
         }
         return ideas;
     }
+
+
 }
