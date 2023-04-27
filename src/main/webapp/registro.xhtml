@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <title>INICIO !!</title>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <link rel="stylesheet" type="text/css" href="inicio.css"/>
+</h:head>
+<h:body>
+    <div class="main">
+        <input type="checkbox" id="chk" aria-hidden="true"/>
+        <div class="signup">
+            <h:form>
+                <label for="chk" aria-hidden="true"><font color="white"> Registrarse</font></label>
+                <p:inputText class="input" value="#{userBean.personalName}" placeholder="Nombre completo" required=""/>
+                <p:inputText class="input" value= "#{userBean.username}" placeholder="Usuario" required=""/>
+                <p:password class="input" value="#{userBean.password}"  required="true" label="password" placeholder="Contraseña"/>
+                <p:outputLabel id="label" value="#{userBean.message}"></p:outputLabel><br/>
+                <p:button class="button" value="Registrarme" action="#{userBean.addUser()}" update="label"/>
+            </h:form>
+        </div>
+        <div class="login">
+            <h:form>
+                <label for="chk" aria-hidden="true">Entrar</label>
+                <p:inputText class="input" value="#{userBean.username}" placeholder="Usuario" required="" />
+                <p:password class="input" value="#{userBean.password}"  required="" label="password" placeholder="Contraseña"  />
+                <p:outputLabel id="label" value="#{userBean.message}"></p:outputLabel><br/>
+                <p:commandButton class="button" value="Login" action="#{userBean.loginUser()}" update="label"/>
+            </h:form>
+        </div>
+    </div>
+    <link rel="stylesheet" href="inicio.css"/>
+</h:body>
+</html>
