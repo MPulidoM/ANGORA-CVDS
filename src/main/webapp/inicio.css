@@ -18,7 +18,7 @@ body{
 }
 .main{
 	width: 350px;
-	height: 500px;
+	height: 600px;
 	overflow: hidden;
 	border-radius: 90px;
 	border: 4px solid #DEDEDE;
@@ -44,8 +44,8 @@ label{
 	transition: .5s ease-in-out;
 }
 .input{
-	width: 90%;
-	height: 40px;
+	width: 70%;
+	height: 20px;
 	background: #e0dede;
 	justify-content: center;
 	display: flex;
@@ -67,7 +67,7 @@ label{
 	background: #573b8a;
 	font-size: 1em;
 	font-weight: bold;
-	margin-top: -50px;
+	margin-top: -90px;
 	outline: none;
 	border: none;
 	border-radius: 50px;
@@ -100,15 +100,14 @@ button:hover{
 select {
    position: relative;
    display: block;
-   width: 90%;
-   height: 40px;
-   margin: 20px auto;
+   width: 70%;
+   height: 20px;
+   margin: 10px auto;
    font-family: 'Open Sans', 'Helvetica Neue', 'Segoe UI', 'Calibri', 'Arial', sans-serif;
-   font-size: 1.1em;
+   font-size: 1.0em;
    background: #e0dede;
    outline: none;
    border-radius: 5px;
-   padding: 7px;
    border: none;
    outline: none;
 }
