@@ -30,6 +30,9 @@ public class UserBean  {
         this.username = "";
         this.password = "";
         this.message = "";
+        this.personalName = "";
+        this.profile = "";
+        this.rol = "";
     }
 
     public String getMessage() {

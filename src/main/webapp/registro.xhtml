@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">>
+
 <h:head>
-    <title>INICIO !!</title>
-    <link rel="stylesheet" type="text/css" href="inicio.css"/>
+    <meta http-equiv="Expires" content="0"></meta>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="Last-Modified" content="0"/>
+    <meta http-equiv="Cache-Control" content="no-cache, must-revalidate"></meta>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <link rel="stylesheet" type="text/css" href="registro.css"/>
 </h:head>
 <h:body>
     <div class="main">
@@ -12,44 +18,42 @@
         <div class="signup">
             <h:form>
                 <label for="chk" aria-hidden="true"><font color="white"> Registrarse</font></label>
-                <p:inputText class="input" value="#{userBean.personalName}" placeholder="Nombre completo" required=""/>
-                <p:inputText class="input" value= "#{userBean.username}" placeholder="Usuario" required=""/>
-                <p:inputText class="input" value= "#{userBean.email}" placeholder="Email" required=""/>
-                <p:inputText class="input" value= "#{userBean.age}" placeholder="Edad" required=""/>
-                <div class="select">
-                    <select>
-                        <option value="Email">Area</option>
-                        <option>Cliente</option>
-                        <option>Usuario</option>
-
-                    </select>
-                    <i></i>
+                <p:inputText class="input" value="#{userBean.personalName}" placeholder="Nombre completo" required="true"/>
+                <p:inputText class="input" value= "#{userBean.username}" placeholder="Usuario" required="true"/>
+                <p:inputText class="input" value= "#{userBean.email}" placeholder="Email" required="true"/>
+                <p:inputText class="input" value= "#{userBean.age}" placeholder="Edad" required="true"/>
+                <div class="select" >
+                    <h:selectOneMenu value="#{userBean.area}" >
+                        <f:selectItem itemLabel="Por favor selecciona un Area" selected="selected" itemDisable="true"/>
+                        <f:selectItem itemValue="Sistemas"/>
+                        <f:selectItem itemValue="Matemáticas"/>
+                        <f:selectItem itemValue="Sociales"/>
+                        <f:selectItem itemValue="Aministración"/>
+                    </h:selectOneMenu>
                 </div>
                 <p:inputText class="input" value= "#{userBean.rol}" placeholder="Rol" required=""/>
                 <div class="select">
-                    <select>
-                        <option value="Email">Perfil</option>
-                        <option>Cliente</option>
-                        <option>Proponente</option>
-
-                    </select>
-                    <i></i>
+                    <h:selectOneMenu value="#{userBean.profile}">
+                        <f:selectItem itemLabel="Elige tu perfil" selected="selected" itemDisable="true"/>
+                        <f:selectItem itemValue="Proponente" itemLabel="Proponente"/>
+                        <f:selectItem itemValue="Cliente" itemLabel="Cliente"/>
+                    </h:selectOneMenu>
                 </div>
-                <p:password class="input" value="#{userBean.password}"  required="true" label="password" placeholder="Contraseña"/>
+                <p:password class="input" value="#{userBean.password}"  required="" label="password" placeholder="Contraseña"/>
                 <p:outputLabel id="label" value="#{userBean.message}"></p:outputLabel><br/>
-                <p:button class="button" value="Registrarme" action="#{userBean.addUser()}" update="label"/>
+                <p:commandButton class="button" value="Registrarme" action="#{userBean.addUser()}" update="label"/>
             </h:form>
         </div>
         <div class="login">
             <h:form>
-                <label for="chk" aria-hidden="true">Entrar</label>
+                <label for="chk" aria-hidden="true" >Entrar</label>
                 <p:inputText class="input" value="#{userBean.username}" placeholder="Usuario" required="" />
-                <p:password class="input" value="#{userBean.password}"  required="" label="password" placeholder="Contraseña"  />
+                <p:password class="input" value="#{userBean.password}"  required="" label="password" placeholder="Contraseña"/>
                 <p:outputLabel id="label" value="#{userBean.message}"></p:outputLabel><br/>
                 <p:commandButton class="button" value="Login" action="#{userBean.loginUser()}" update="label"/>
             </h:form>
         </div>
     </div>
-    <link rel="stylesheet" href="inicio.css"/>
+    <link rel="stylesheet" href="registro.css"/>
 </h:body>
 </html>

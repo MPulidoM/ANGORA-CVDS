@@ -35,17 +35,17 @@ body{
 }
 label{
 	color: #fff;
-	font-size: 2.3em;
+	font-size: 2em;
 	justify-content: center;
 	display: flex;
-	margin: 50px;
+	margin: 45px;
 	font-weight: bold;
 	cursor: pointer;
 	transition: .5s ease-in-out;
 }
 .input{
 	width: 70%;
-	height: 20px;
+	height: 25px;
 	background: #e0dede;
 	justify-content: center;
 	display: flex;
@@ -90,24 +90,29 @@ button:hover{
 	transform: scale(.6);
 }
 
-
-#chk:checked ~ .signup label{
+#chk:checked ~ .signup Label{
 	transform: scale(.6);
 }
 #chk:checked ~ .login{
-	transform: translateY(-500px);
+	transform: translateY(-370px);
 }
-select {
+select{
    position: relative;
-   display: block;
+   display: flex;
    width: 70%;
-   height: 20px;
+   height: 25px;
    margin: 10px auto;
-   font-family: 'Open Sans', 'Helvetica Neue', 'Segoe UI', 'Calibri', 'Arial', sans-serif;
-   font-size: 1.0em;
+   font-size: 0.65em;
    background: #e0dede;
-   outline: none;
    border-radius: 5px;
+   padding: -10px;
+   margin: 20px auto;
+   padding: 5px;
    border: none;
    outline: none;
+   justify-content: center;
+}
+input::placeholder {
+  color: Black;
+  font-size: 0.6em;
 }
