@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.faces.bean.ManagedBean;
+import java.util.List;
 
 @Component
 @ManagedBean(name = "userBean")
@@ -122,11 +123,11 @@ public class UserBean  {
     public String loginUser(){
         String bandera = "#{facesContext.getExternalContext().redirect(request.getRequestURI())}" ;
         if (userService.userExist(username)) {
-            if(userService.getUser(username).equals(new Users(username,password))){
-                bandera = "idea.xhtml";
+            if(userService.getUser(username).getPassword().equals(password)){
+                bandera = perfileValidation();
                 message = " ";
             }else {
-                message = "Usuario no valido";
+                message = "clave incorrecta";
             }
         } else {
             message = "Usuario no valido";
@@ -134,4 +135,17 @@ public class UserBean  {
 
         return bandera;
     }
+
+    public String perfileValidation (){
+        String perfile = userService.getUser(username).getProfile();
+        if ( perfile.equals("Proponente")) {
+            return "idea.xhtml?faces-redirect=true";
+        }
+        else if (perfile.equals("Administrador")) {
+            return "usuariosAdministrador.xhtml?faces-redirect=true";
+        } else {
+            return "consultas.xhtml?faces-redirect=true";
+        }
+    }
+
 }

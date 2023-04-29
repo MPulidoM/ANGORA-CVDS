@@ -9,14 +9,14 @@
 </h:head>
 <h:body>
     <h:form>
-        <h1>Consulta</h1>
+        <h1>Consulta Ideas</h1>
         <p>Palabras</p>
         <p:inputText value="#{ideasBean.keyWords}" />
-        <p:commandButton class="button" value="Login" update="table1"/>
+        <p:commandButton class="button" value="Buscar" update="table1"/>
         <div id="contenedor">
             <h:dataTable id="table1" value="#{ideasBean.consultKeywords()}" var="item" border="1">
                 <f:facet name="header">
-                    <h:outputText value="Ofertas disponibles en esas fechas" />
+                    <h:outputText value="Consulta por la palabra clave: #{ideasBean.keyWords}" />
                 </f:facet>
                 <h:column>
                     <f:facet name="header">

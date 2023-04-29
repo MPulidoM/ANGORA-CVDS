@@ -12,33 +12,6 @@
         <h1>Registra tu idea</h1>
         <div id="contenedor">
 
-            <h:dataTable id="table1" value="#{userService.allUsers}" var="item" border="1">
-                <f:facet name="header">
-                    <h:outputText value="Ofertas disponibles en esas fechas" />
-                </f:facet>
-                <h:column>
-                    <f:facet name="header">
-                        <h:outputText value="Nombre" />
-                    </f:facet>
-                    <h:outputText value="#{item.username}"/>
-                </h:column>
-                <h:column>
-                    <f:facet name="header">
-                        <h:outputText value="Primer día" />
-                    </f:facet>
-                    <h:outputText value="#{item.area}" />
-                </h:column>
-                <h:column>
-                    <f:facet name="header">
-                        <h:commandLink value="Activity Start Time" actionListener="#{SessionsController.sort}">
-                            <f:attribute name="sortField" value="Activity Start Time" />
-                        </h:commandLink>
-                    </f:facet>
-                    <h:outputText value="#{item.email}" />
-                </h:column>
-            </h:dataTable>
-
-
             <p>Nombre de la propuesta:</p>
             <p:inputText value="#{ideasBean.name}"/>
             <p>Topico:</p>
@@ -55,21 +28,11 @@
             </h:selectOneMenu>
             <p>Description de la idea:</p>
             <p:inputText value="#{ideasBean.description}"/>
-            <p>proponente:</p>
-            <p:inputText value="#{ideasBean.proponent}"/>
-            <p>Ocupación del proponente:</p>
-            <h:selectOneMenu value="#{ideasBean.ocupacion}">
-                <f:selectItems value="#{userService.allUsers}" />
-            </h:selectOneMenu>
             <p>palabras clave:</p>
             <p:inputText value="#{ideasBean.keyWords}"/>
-            <p>Area del proponente:</p>
-            <p:inputText value="#{ideasBean.proponentArea}"/>
             <p>Mensage:</p>
-            <p:outputLabel id="label" value="#{ideasBean.setProponent(userBean.username)}"></p:outputLabel><br/>
-            #{ideasBean.setProponent(userBean.username)}
-            <p:commandButton value=" Registrarme" action="#{ideasBean.addIdea()}"/>
-            <p:commandButton value=" buscar" action="#{ideasBean.message}" />
+            <p:commandButton value=" Registrar Idea" action="#{ideasBean.addIdea()}"/>
+            <p:commandButton value=" buscar" action="consultas.xhtml?faces-redirect=true" />
 
         </div>
 

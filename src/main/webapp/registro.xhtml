@@ -23,7 +23,7 @@
                 <p:inputText class="input" value= "#{userBean.email}" placeholder="Email" required="true"/>
                 <p:inputText class="input" value= "#{userBean.age}" placeholder="Edad" required="true"/>
                 <div class="select" >
-                    <h:selectOneMenu value="#{userBean.area}" >
+                    <h:selectOneMenu value="#{userBean.area}" required="true">
                         <f:selectItem itemLabel="Por favor selecciona un Area" selected="selected" itemDisable="true"/>
                         <f:selectItem itemValue="Sistemas"/>
                         <f:selectItem itemValue="Matemáticas"/>
@@ -31,15 +31,15 @@
                         <f:selectItem itemValue="Aministración"/>
                     </h:selectOneMenu>
                 </div>
-                <p:inputText class="input" value= "#{userBean.rol}" placeholder="Rol" required=""/>
+                <p:inputText class="input" value= "#{userBean.rol}" placeholder="Rol" required="true"/>
                 <div class="select">
-                    <h:selectOneMenu value="#{userBean.profile}">
+                    <h:selectOneMenu value="#{userBean.profile}" required="true">
                         <f:selectItem itemLabel="Elige tu perfil" selected="selected" itemDisable="true"/>
                         <f:selectItem itemValue="Proponente" itemLabel="Proponente"/>
                         <f:selectItem itemValue="Cliente" itemLabel="Cliente"/>
                     </h:selectOneMenu>
                 </div>
-                <p:password class="input" value="#{userBean.password}"  required="" label="password" placeholder="Contraseña"/>
+                <p:password class="input" value="#{userBean.password}"  required="true" label="password" placeholder="Contraseña"/>
                 <p:outputLabel id="label" value="#{userBean.message}"></p:outputLabel><br/>
                 <p:commandButton class="button" value="Registrarme" action="#{userBean.addUser()}" update="label"/>
             </h:form>
@@ -47,8 +47,8 @@
         <div class="login">
             <h:form>
                 <label for="chk" aria-hidden="true" >Entrar</label>
-                <p:inputText class="input" value="#{userBean.username}" placeholder="Usuario" required="" />
-                <p:password class="input" value="#{userBean.password}"  required="" label="password" placeholder="Contraseña"/>
+                <p:inputText class="input" value="#{userBean.username}" placeholder="Usuario" required="true" />
+                <p:password class="input" value="#{userBean.password}"  required="true" label="password" placeholder="Contraseña"/>
                 <p:outputLabel id="label" value="#{userBean.message}"></p:outputLabel><br/>
                 <p:commandButton class="button" value="Login" action="#{userBean.loginUser()}" update="label"/>
             </h:form>

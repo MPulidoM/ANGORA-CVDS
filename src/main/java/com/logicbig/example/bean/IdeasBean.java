@@ -127,7 +127,7 @@ public class IdeasBean {
         if (keyWords != null) {
             for (Ideas idea : ideaService.getAllIdeas()) {
                 if (idea.getKeyWords().contains(keyWords)) {
-                    System.out.println("//////////////////" + keyWords + idea.getName());
+                    System.out.println("-----------------------; " + keyWords + idea.getName());
                     ideas.add(idea);
                 }
             }
@@ -135,6 +135,18 @@ public class IdeasBean {
         return ideas;
     }
 
+    public List<Ideas> consultTopics (){
+        List<Ideas> ideas = new ArrayList<>();
+        if (topic != null) {
+            for (Ideas idea : ideaService.getAllIdeas()) {
+                if (idea.getTopic().contains(topic)) {
+                    System.out.println("-----------------------; " + topic + idea.getName());
+                    ideas.add(idea);
+                }
+            }
+        }
+        return ideas;
+    }
     public List<Ideas> groupedByIdeas (String proponentArea){
         List<Ideas> ideas = new ArrayList<>();
         for ( Ideas idea: ideaService.getAllIdeas()){
