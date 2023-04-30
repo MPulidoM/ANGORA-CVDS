@@ -138,13 +138,13 @@ public class UserBean  {
 
     public String perfileValidation (){
         String perfile = userService.getUser(username).getProfile();
-        if ( perfile.equals("Proponente")) {
-            return "idea.xhtml?faces-redirect=true";
+        if ( perfile.equals("proponente")) {
+            return "consuPro.xhtml?faces-redirect=true";
         }
         else if (perfile.equals("Administrador")) {
             return "usuariosAdministrador.xhtml?faces-redirect=true";
         } else {
-            return "consultas.xhtml?faces-redirect=true";
+            return "consu.xhtml?faces-redirect=true";
         }
     }
 
