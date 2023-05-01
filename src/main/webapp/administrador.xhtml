@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+    <title>Administrador</title>
+    <link rel="stylesheet" type="text/css" href="adm.css"/>
+    <link rel="icon" href="/imagenes/logo.png"/>
+</h:head>
+<h:body>
+    <div id="general">
+        <header class="header">
+            <div class="logo">
+                <img src="/imagenes/admi.png" alt="Perfil"/>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><img src="/imagenes/logo3.png" alt="Perfil"/></li>
+                </ul>
+            </nav>
+            <a class="btn" href="#">
+                <p:commandButton class="button" value="Administrar Usuarios" action="admUsuarios.xhtml?faces-redirect=true"/>
+            </a>
+        </header>
+
+        <div class="consulta">
+            <h:form>
+                <h:selectOneMenu class="topico" value="#{ideasBean.topic}">
+                    <f:selectItem itemLabel="Por favor selecciona un topico" selected="selected" itemDisable="true"/>
+                    <f:selectItem itemValue="Artes" itemLabel="Artes" />
+                    <f:selectItem itemValue="Deportes" itemLabel="Deportes" />
+                    <f:selectItem itemValue="Ambiental" itemLabel="Ambiental" />
+                    <f:selectItem itemValue="Tecnología" itemLabel="Tecnología" />
+                    <f:selectItem itemValue="Social" itemLabel="Social" />
+                    <f:selectItem itemValue="Educación" itemLabel="Educación" />
+                    <f:selectItem itemValue="Salud" itemLabel="Salud" />
+                    <f:selectItem itemValue="Economía" itemLabel="Economía" />
+                    <f:selectItem itemValue="Infraestructura" itemLabel="Infraestructura" />
+                </h:selectOneMenu>
+                <p:commandButton class="button1" value="Agrupar" update="table1"/>
+                <div id="contenedor">
+                    <h:dataTable id="table1" value="#{ideasBean.consultTopics()}" var="item" border="1" class="content-table">
+                        <f:facet name="header">
+                            <h:outputText value="Ideas agrupadas por: #{ideasBean.topic}" />
+                        </f:facet>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Nombre" />
+                            </f:facet>
+                            <h:outputText value="#{item.name}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="topico" />
+                            </f:facet>
+                            <h:outputText value="#{item.topic}"/>
+                        </h:column>
+                    </h:dataTable>
+                </div>
+            </h:form>
+        </div>
+    </div>
+</h:body>
+</html>

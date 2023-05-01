@@ -142,7 +142,7 @@ public class UserBean  {
             return "consuPro.xhtml?faces-redirect=true";
         }
         else if (perfile.equals("Administrador")) {
-            return "usuariosAdministrador.xhtml?faces-redirect=true";
+            return "administrador.xhtml?faces-redirect=true";
         } else {
             return "consu.xhtml?faces-redirect=true";
         }
