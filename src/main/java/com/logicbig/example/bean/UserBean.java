@@ -10,7 +10,7 @@ import java.util.List;
 
 @Component
 @ManagedBean(name = "userBean")
-public class UserBean  {
+    public class UserBean  {
     @Autowired
     private UserService userService;
     // Nombre que tengra el usuario dentro de la aplicacion y con el cual se identifica (ID)
@@ -21,9 +21,9 @@ public class UserBean  {
     // Perfil que maneja dentro de nuestra aplicacion, de esto dependen los permisos
     private String profile;
     // Cargo que desempeña
-    private String rol;
+    static String rol;
     private int age;
-    private String area;
+    static String area;
     private String email;
     private String message;
 

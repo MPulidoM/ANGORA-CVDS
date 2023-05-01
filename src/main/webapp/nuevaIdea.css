@@ -84,17 +84,19 @@
 body{
   margin: 0 auto;
   padding: 0;
-  display: grid;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   font-family: 'Jost', sans-serif;
-  background: url("imagenes/blanco.jpg")no-repeat center/ cover;
+  background: url("imagenes/blanco.jpg");
+  background-size: cover;
 }
 .idea{
-  width: 550px;
+  width: 950px;
   height: 680px;
-  margin: 60px;
+  position: absolute;
+  top: 150px;
+  left: 13%;
   border-radius: 20px;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -104,6 +106,7 @@ body{
   border-color: #283747;
   padding-left: 30px;
   opacity: .8;
+
 }
 .input{
   background-color: #fbfbfb;
@@ -122,8 +125,10 @@ body{
 }
 .inputDes{
    background-color: #fbfbfb;
-   width: 405px;
+   width: 890px;
    height: 150px;
+   max-height: 150px;
+   resize: none;
    border-radius: 5px;
    border-style: solid;
    border-width: 1px;
@@ -150,7 +155,6 @@ p{
   color: #0e0e0e;
 }
 .button{
-margin-left: 20px;
     font-weight: 700;
     color: #ffffff;
     padding: 2px 5px;

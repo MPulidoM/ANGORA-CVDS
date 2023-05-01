@@ -9,44 +9,41 @@
     <link rel="icon" href="/imagenes/logo.png"/>
 </h:head>
 <h:body>
-    <div id="general">
-        <header class="header">
-            <div class="logo">
-                <img src="/imagenes/cliente.jpg" alt="Perfil"/>
-            </div>
-            <nav>
-                <ul class="nav-links">
-                    <li><img src="/imagenes/logo3.png" alt="Perfil"/></li>
-                </ul>
-            </nav>
-        </header>
-        <div class="idea">
-            <h:form>
-                <h1>Registra tu idea</h1>
-                <p>Nombre de la propuesta:</p>
-                <p:inputText  class="input" value="#{ideasBean.name}"/>
-                <p>Topico:</p>
-                <h:selectOneMenu  class="input" value="#{ideasBean.topic}">
-                    <f:selectItem selected="selected" itemDisable="true"/>
-                    <f:selectItem itemValue="Artes" itemLabel="Artes" />
-                    <f:selectItem itemValue="Deportes" itemLabel="Deportes" />
-                    <f:selectItem itemValue="Ambiental" itemLabel="Ambiental" />
-                    <f:selectItem itemValue="Tecnología" itemLabel="Tecnología" />
-                    <f:selectItem itemValue="Social" itemLabel="Social" />
-                    <f:selectItem itemValue="Educación" itemLabel="Educación" />
-                    <f:selectItem itemValue="Salud" itemLabel="Salud" />
-                    <f:selectItem itemValue="Economía" itemLabel="Economía" />
-                    <f:selectItem itemValue="Infraestructura" itemLabel="Infraestructura" />
-                </h:selectOneMenu>
-                <p>Palabras clave:</p>
-                <p:inputText class="input" value="#{ideasBean.keyWords}"/>
-                <p>Descripción de la idea:</p>
-                <p:inputText class="inputDes" value="#{ideasBean.description}"/>
-                <p>Mensage:</p><br/>
-                <p:commandButton class="button" value=" Registrar Idea" action="#{ideasBean.addIdea()}"/>
-                <p:commandButton class="button" value="Devolverse" action="consuPro.xhtml?faces-redirect=true" />
-            </h:form>
+    <header class="header">
+        <div class="logo">
+            <img src="/imagenes/cliente.jpg" alt="Perfil"/>
         </div>
+        <nav>
+            <ul class="nav-links">
+                <li><img src="/imagenes/logo3.png" alt="Perfil"/></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="idea">
+        <h:form>
+            <h1>Registra tu idea</h1>
+            <p>Nombre de la propuesta:</p>
+            <p:inputText class="input" value="#{ideasBean.name}"/>
+            <p>Topico:</p>
+            <h:selectOneMenu class="input" value="#{ideasBean.topic}">
+                <f:selectItem selected="selected" itemDisable="true"/>
+                <f:selectItem itemValue="Artes" itemLabel="Artes"/>
+                <f:selectItem itemValue="Deportes" itemLabel="Deportes"/>
+                <f:selectItem itemValue="Ambiental" itemLabel="Ambiental"/>
+                <f:selectItem itemValue="Tecnología" itemLabel="Tecnología"/>
+                <f:selectItem itemValue="Social" itemLabel="Social"/>
+                <f:selectItem itemValue="Educación" itemLabel="Educación"/>
+                <f:selectItem itemValue="Salud" itemLabel="Salud"/>
+                <f:selectItem itemValue="Economía" itemLabel="Economía"/>
+                <f:selectItem itemValue="Infraestructura" itemLabel="Infraestructura"/>
+            </h:selectOneMenu>
+            <p>Palabras clave:</p>
+            <p:inputText class="input" value="#{ideasBean.keyWords}"/>
+            <p>Descripción de la idea:</p>
+            <p:inputTextarea class="inputDes" value="#{ideasBean.description}"/>
+            <p:commandButton class="button" value=" Registrar Idea" action="#{ideasBean.addIdea()}"/>
+            <p:commandButton class="button" value="Devolverse" action="consuPro.xhtml?faces-redirect=true"/>
+        </h:form>
     </div>
 </h:body>
 </html>
