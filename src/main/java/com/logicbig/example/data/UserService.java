@@ -47,4 +47,15 @@ public class UserService {
         return userRepository.findByUsername(username).get(0).getPassword();
     }
 
+    public void changueEdit(Users users){
+        users.setEdit(!users.isEdit());
+        addUser(users);
+    }
+
+    public void changueProfile(Users users, String profile){
+        profile= (profile.isEmpty()) ? users.getProfile() : profile;
+        users.setProfile(profile);
+        changueEdit(users);
+    }
+
 }

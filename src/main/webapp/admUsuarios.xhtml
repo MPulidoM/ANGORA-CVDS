@@ -60,13 +60,26 @@
                             <f:facet name="header">
                                 <h:outputText value="profile" />
                             </f:facet>
-                            <h:outputText value="#{item.profile}"/>
+                            <h:outputText value="#{item.profile}" rendered="#{not item.edit}"/>
+                            <h:selectOneMenu value="#{profile}" rendered="#{item.edit}">
+                                <f:selectItem itemLabel="Cambie el perfil" selected="selected" itemDisable="true"/>
+                                <f:selectItem itemValue="Administrador" itemLabel="Administrador"/>
+                                <f:selectItem itemValue="Proponente" itemLabel="Proponente"/>
+                                <f:selectItem itemValue="Cliente" itemLabel="Cliente"/>
+                            </h:selectOneMenu>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
                                 <h:outputText value="rol" />
                             </f:facet>
                             <h:outputText value="#{item.rol}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Acciones" />
+                            </f:facet>
+                            <h:commandButton action="#{userService.changueProfile(item, profile)}" value="Guardar" rendered="#{item.edit}"/>
+                            <h:commandButton action="#{userService.changueEdit(item)}" value="Editar" rendered="#{not item.edit}"/>
                         </h:column>
                     </h:dataTable>
                 </div>

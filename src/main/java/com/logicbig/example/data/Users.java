@@ -23,6 +23,7 @@ public class Users {
 
     private String email;
 
+    private boolean edit;
 
     public Users(String username, String password) {
         this.username = username;
@@ -38,6 +39,7 @@ public class Users {
         this.age = age;
         this.area = area;
         this.email = email;
+        this.edit = false;
     }
 
     public Users() {
@@ -108,6 +110,10 @@ public class Users {
         this.email = email;
     }
 
+    public boolean isEdit() {return edit;}
+
+    public void setEdit(boolean edit) {this.edit = edit;}
+
     @Override
     public String toString() {
         return "Users{" +
@@ -119,6 +125,7 @@ public class Users {
                 ", age=" + age +
                 ", area='" + area + '\'' +
                 ", email='" + email + '\'' +
+                ", edit='" + false + '\'' +
                 '}';
     }
 
