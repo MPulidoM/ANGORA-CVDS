@@ -1,7 +1,7 @@
 package com.logicbig.example.bean;
 
-import com.logicbig.example.data.Ideas;
-import com.logicbig.example.data.IdeasService;
+import com.logicbig.example.data.*;
+import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -16,6 +16,8 @@ public class IdeasBean {
 
     @Autowired
     private IdeasService ideaService;
+    @Autowired
+    private UserService userService;
     private String use;
     private String name;
     private String topic;
@@ -116,8 +118,8 @@ public class IdeasBean {
     }
 
     public void addIdea() {
-
-        ideaService.addIdeas(new Ideas( name, topic, description, UserBean.username, ocupacion, keyWords, proponentArea));
+        Users user = userService.getUser(UserBean.username);
+        ideaService.addIdeas(new Ideas( name, topic, description, user.getUsername(), user.getRol(), keyWords, user.getArea()));
         message = " ";
     }
 
