@@ -14,6 +14,11 @@
         <input type="checkbox" id="chk" aria-hidden="true"/>
         <div class="signup">
             <h:form>
+                <script type="text/javascript">
+                    function validateForm() {
+                        alert("#{userBean.message}");
+                    }
+                </script>
                 <label for="chk" aria-hidden="true"><font color="white"> Registrarse</font></label>
                 <p:inputText class="input" value="#{userBean.personalName}" placeholder="Nombre completo" required="true"/>
                 <p:inputText class="input" value= "#{userBean.username}" placeholder="Usuario" required="true"/>
@@ -38,19 +43,23 @@
                 </div>
                 <p:password class="input" value="#{userBean.password}"  required="true" label="password" placeholder="Contraseña"/>
                 <p:outputLabel id="label" value="#{userBean.message}"></p:outputLabel><br/>
-                <p:commandButton class="button" value="Registrarme" action="#{userBean.addUser()}" update="label"/>
+                <p:commandButton class="button" value="Registrarme" action="#{userBean.addUser()}" type="submit" onclick="validateForm()"/>
             </h:form>
         </div>
         <div class="login">
             <h:form>
+                <script type="text/javascript">
+                    function validateForm() {
+                        alert("#{userBean.message}");
+                    }
+                </script>
                 <label for="chk" aria-hidden="true" >Entrar</label>
                 <p:inputText class="input" value="#{userBean.username}" placeholder="Usuario" required="true" />
                 <p:password class="input" value="#{userBean.password}"  required="true" label="password" placeholder="Contraseña"/>
                 <p:outputLabel id="label" value="#{userBean.message}"></p:outputLabel><br/>
-                <p:commandButton class="button" value="Login" action="#{userBean.loginUser()}" update="label"/>
+                <p:commandButton class="button" value="Login" action="#{userBean.loginUser()}" type="submit" onclick="validateForm()"/>
             </h:form>
         </div>
     </div>
-    <link rel="stylesheet" href="registro.css"/>
 </h:body>
 </html>

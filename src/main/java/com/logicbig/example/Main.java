@@ -33,7 +33,7 @@ public class Main{
         return (args) -> {
             System.out.println("Adding Configuration....\n");
             userService.addUser(new Users("AdminAngora","Ad101Angora","Carlos Leal","Administrador","Empleado",45,"Sistemas","Adminastor.Angora@gmail.com"));
-            userService.addUser(new Users("Mpulido23","lhanna.23","Mariana Pulido","Usuario","Estudiante",20,"Matematicas","mpm@gmail.com"));
+            userService.addUser(new Users("Mpulido23","lhanna.23","Mariana Pulido","Proponente","Estudiante",20,"Matematicas","mpm@gmail.com"));
             userService.addUser(new Users("AmbientalINC.ADMIN","pro.ambiental","Alberto Pardo","Cliente","Gerente de Proyectos ",39,"Deporte","ProyectosPlaneta@ambientalINC.com"));
             ideasService.addIdeas(new Ideas("Reciclaje a 3 pasos","Ambiental","Campaña de nuevos metodos verdes","Mpulido23","estudiante","Clasificacion de residuos, ambiental, verde, ecofriendly","Reciclaje"));
             System.out.println("\nGetting all configs....");

@@ -125,9 +125,9 @@ import java.util.List;
         if (userService.userExist(username)) {
             if(userService.getUser(username).getPassword().equals(password)){
                 bandera = perfileValidation();
-                message = " ";
+                message = "Bienvenido Angora";
             }else {
-                message = "clave incorrecta";
+                message = "Clave incorrecta";
             }
         } else {
             message = "Usuario no valido";
