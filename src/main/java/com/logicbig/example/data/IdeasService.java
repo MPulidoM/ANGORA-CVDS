@@ -37,4 +37,15 @@ public class IdeasService {
         ideaRepository.flush();
     }
 
+    public void changueEdit(Ideas ideas){
+        ideas.setEdit(!ideas.isEdit());
+        addIdeas(ideas);
+    }
+
+    public void changueEstado(Ideas ideas, String estado){
+        estado= (estado.isEmpty()) ? ideas.getEstado() : estado;
+        ideas.setEstado(estado);
+        changueEdit(ideas);
+    }
+
 }

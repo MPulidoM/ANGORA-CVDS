@@ -20,6 +20,12 @@ public class Ideas {
     private String keyWords;
     private String proponentArea;
 
+    private String estado;
+
+    private boolean edit;
+
+
+
     public Ideas() {
     }
 
@@ -33,6 +39,8 @@ public class Ideas {
         this.ocupacion = ocupacion;
         this.keyWords = keyWords;
         this.proponentArea = proponentArea;
+        this.estado = "pendiente";
+        this.edit = false;
     }
 
     public String getName() {
@@ -98,6 +106,19 @@ public class Ideas {
     public void setTopic(String topic) {
         this.topic = topic;
     }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+
+    public boolean isEdit() {return edit;}
+
+    public void setEdit(boolean edit) {this.edit = edit;}
 
     @Override
     public int hashCode() {

@@ -27,6 +27,8 @@ public class IdeasBean {
     private String ocupacion;
     private String keyWords;
     private String proponentArea;
+
+    private String estado;
     private String message;
 
     public IdeasService getIdeaService() {
@@ -115,6 +117,14 @@ public class IdeasBean {
 
     public void setTopic(String topic) {
         this.topic = topic;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 
     public void addIdea() {
