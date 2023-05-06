@@ -1,11 +1,19 @@
 package com.logicbig.example.faces;
 
+import com.logicbig.example.bean.IdeasBean;
+import com.logicbig.example.data.Ideas;
+import org.jetbrains.annotations.NotNull;
+import org.primefaces.model.chart.BarChartSeries;
+import org.primefaces.model.chart.ChartSeries;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
 @Service
 public class DataService {
+    @Autowired
+    IdeasBean ideasBean;
 
     public Map<Integer, Double> getLineChartData() {
         Map<Integer, Double> map = new LinkedHashMap<>();
@@ -16,5 +24,13 @@ public class DataService {
         map.put(5, 300.4);
         map.put(6, 630.0);
        return map;
+    }
+
+    public BarChartSeries getBarChartData(@NotNull BarChartSeries series) {
+        series.set("Sistemas", ideasBean.groupedByIdeas("Sistemas").size());
+        series.set("Matematicas", ideasBean.groupedByIdeas("Reciclaje").size());
+        series.set("Sociales", 500);
+        series.set("Administracion", 500);
+        return series;
     }
 }

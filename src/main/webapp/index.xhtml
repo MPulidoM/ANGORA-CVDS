@@ -4,13 +4,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	  xmlns:h="http://java.sun.com/jsf/html"
 	  xmlns:p="http://primefaces.org/ui"
-	  xmlns:ui="http://java.sun.com/jsf/facelets">
-
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+	  xmlns:f="http://java.sun.com/jsf/core">
+<f:metadata>
+	<f:event type="preRenderView" listener="#{barChartBean.onAppReady()}" />
+</f:metadata>
 <h:head>
 </h:head>
 
 <h:body style="margin-left:50px">
 	<h2>PrimeFaces Linear Chart Example</h2>
-	<p:chart type="line" model="#{lineChartBean.lineModel}" style="height:400px;width:600px"/>
+	<p:chart type="bar" model="#{barChartBean.chartModel}" style="height:400px;width:600px"/>
 </h:body>
 </html>
