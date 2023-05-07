@@ -31,6 +31,7 @@ public class IdeasBean {
     private String estado;
     private String message;
 
+    private List<Ideas> filteredIdeas = new ArrayList<>();
     public IdeasService getIdeaService() {
         return ideaService;
     }
@@ -126,6 +127,9 @@ public class IdeasBean {
     public void setEstado(String estado) {
         this.estado = estado;
     }
+    public void setFilteredIdeas(List<Ideas> filteredIdeas) {
+        this.filteredIdeas = filteredIdeas;
+    }
 
     public void addIdea() {
         Users user = userService.getUser(UserBean.username);
@@ -134,9 +138,10 @@ public class IdeasBean {
     }
 
 
-    public List<Ideas> consultKeywords (){
+    public List<Ideas> consultKeywords(String value) {
         List<Ideas> ideas = new ArrayList<>();
-        if (keyWords != null) {
+        if (value != null) {
+            System.out.println("Llegue aquí");
             for (Ideas idea : ideaService.getAllIdeas()) {
                 if (idea.getKeyWords().contains(keyWords)) {
                     System.out.println("-----------------------; " + keyWords + idea.getName());
@@ -169,5 +174,13 @@ public class IdeasBean {
         return ideas;
     }
 
+    public void onLoadView () {
+        //this.keyWords = null;
+    }
+
+    public void callbackSearch() {
+        System.out.println("Valor: " + this.keyWords);
+        this.setFilteredIdeas(this.consultKeywords(this.keyWords));
+    }
 
 }

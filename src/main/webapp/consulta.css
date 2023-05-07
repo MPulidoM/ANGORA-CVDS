@@ -1,4 +1,5 @@
 
+
 *{
     box-sizing: border-box;
     margin: 0;
@@ -94,43 +95,39 @@
 	background: url("imagenes/blanco.jpg")no-repeat center/ cover;
 }
 
-.sea{
-    margin: 0 auto;
-    border-radius: 50px;
-    border: 2px solid gray;
+
+.ui-datatable {
+
+ margin-left: 50px;
+    margin-right: 50px;
 }
-.content-table {
-    border-collapse: collapse;    margin: 25px 0;
-    font-size: 0.9em;
-    border-radius: 5px 5px 0 0;    overflow: hidden;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);}
+.ui-datatable thead th{
+   background: url("imagenes/m.png")no-repeat center/ cover;
+   font-weight: bold;
+   font-size: 0.9em;
+   color: #ffffff;
 
-.content-table thead tr {
-    background-color: #283747;    color: #ffffff;
-    text-align: center;    font-weight: bold;
-}
-.content-table th,.content-table td {
-    padding: 12px 15px;
-    text-align: center;}
-
-.content-table tbody tr {
-    border-bottom: 1px solid #dddddd;}
-
-.content-table tbody tr:nth-of-type(even) {
-    background-color: #f3f3f3;}
-
-.content-table tbody tr:last-of-type {
-    border-bottom: 2px solid #009879;}
-
-.content-table tbody tr.active-row {
-    font-weight: bold;    color: #009879;
 }
 
-.search{
-    display: grid;
-    place-content: center;
-    position: relative;
-    top: -120px;
+.ui-datatable tbody td {
+    border-style: none !important;
+}
+.flex align-items-center justify-content-between{
+ background: url("imagenes/m.png")no-repeat center/ cover;
+ color: #ffffff;
+}
+.centradas{
+ text-align: center;
+}
+.ui-paginator{
+background: url("imagenes/m.png")no-repeat center/ cover;
+color: #ffffff;
+height: 40px;
 }
 
-
+.buscar{
+border-radius: 20px;
+}
+.header{
+background: url("imagenes/m.png")no-repeat center/ cover;
+}
