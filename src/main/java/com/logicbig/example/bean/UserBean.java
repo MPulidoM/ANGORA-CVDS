@@ -143,12 +143,12 @@ import java.util.List;
     public String perfileValidation (){
         String perfile = userService.getUser(username).getProfile();
         if ( perfile.equals("Proponente")) {
-            return "consuPro.xhtml?faces-redirect=true";
+            return "consultaPro.xhtml?faces-redirect=true";
         }
         else if (perfile.equals("Administrador")) {
             return "administrador.xhtml?faces-redirect=true";
         } else {
-            return "consu.xhtml?faces-redirect=true";
+            return "consulta.xhtml?faces-redirect=true";
         }
     }
 
