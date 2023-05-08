@@ -45,6 +45,9 @@
                             </f:facet>
                             <h:outputText class="out" value="#{item.keyWords}"/>
                         </h:column>
+                        <h:column >
+                            <h:commandButton action="#{ideasBean.chargueIdea(item)}" value="Ver" />
+                        </h:column>
                     </h:dataTable>
                 </div>
             </h:form>

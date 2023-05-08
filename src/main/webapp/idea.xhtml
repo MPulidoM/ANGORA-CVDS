@@ -13,26 +13,18 @@
         <div id="contenedor">
 
             <p>Nombre de la propuesta:</p>
-            <p:inputText value="#{ideasBean.name}"/>
+            <h:outputText value="#{ideasBean.name}"/>
             <p>Topico:</p>
-            <h:selectOneMenu value="#{ideasBean.topic}">
-                <f:selectItem itemValue="Artes" itemLabel="Artes" />
-                <f:selectItem itemValue="Deportes" itemLabel="Deportes" />
-                <f:selectItem itemValue="Ambiental" itemLabel="Ambiental" />
-                <f:selectItem itemValue="Tecnología" itemLabel="Tecnología" />
-                <f:selectItem itemValue="Social" itemLabel="Social" />
-                <f:selectItem itemValue="Educación" itemLabel="Educación" />
-                <f:selectItem itemValue="Salud" itemLabel="Salud" />
-                <f:selectItem itemValue="Economía" itemLabel="Economía" />
-                <f:selectItem itemValue="Infraestructura" itemLabel="Infraestructura" />
-            </h:selectOneMenu>
+            <h:outputText value="#{ideasBean.topic}"/>
             <p>Description de la idea:</p>
-            <p:inputText value="#{ideasBean.description}"/>
+            <h:outputText value="#{ideasBean.description}"/>
             <p>palabras clave:</p>
-            <p:inputText value="#{ideasBean.keyWords}"/>
-            <p>Mensage:</p>
-            <p:commandButton value=" Registrar Idea" action="#{ideasBean.addIdea()}"/>
-            <p:commandButton value=" buscar" action="consultas.xhtml?faces-redirect=true" />
+            <h:outputText value="#{ideasBean.keyWords}"/>
+            <p>Proponente:</p>
+            <h:outputText value="#{ideasBean.proponent}"/>
+            <p>Area del Proponente:</p>
+            <h:outputText value="#{ideasBean.proponentArea}"/>
+
 
         </div>
 

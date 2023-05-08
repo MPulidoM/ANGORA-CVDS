@@ -169,5 +169,15 @@ public class IdeasBean {
         return ideas;
     }
 
+    public String chargueIdea(Ideas ideas){
+        this.name = ideas.getName();
+        this.description = ideas.getDescription();
+        this.proponent = ideas.getProponent();
+        this.proponentArea = ideas.getProponentArea();
+        this.keyWords = ideas.getKeyWords();
+        this.topic = ideas.getTopic();
+        this.fecha = ideas.getFecha();
+        return "idea.xhtml?faces-redirect=true";
+    }
 
 }
