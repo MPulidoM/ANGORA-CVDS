@@ -53,9 +53,27 @@
                         </h:column>
                         <h:column>
                             <f:facet name="header">
+                                <h:outputText value="Usuario" />
+                            </f:facet>
+                            <h:outputText value="#{item.proponent}" />
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
                                 <h:outputText value="topico" />
                             </f:facet>
                             <h:outputText value="#{item.topic}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Fecha" />
+                            </f:facet>
+                            <h:outputText value="#{item.fecha}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Estado" />
+                            </f:facet>
+                            <h:outputText value="#{item.estado}"/>
                         </h:column>
                     </h:dataTable>
                 </div>
