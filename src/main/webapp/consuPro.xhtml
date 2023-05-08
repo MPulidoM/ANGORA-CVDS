@@ -32,28 +32,25 @@
                 <div id="contenedor">
                     <p:dataTable value="#{ideasService.getAllIdeas()}" var="item"  widgetVar="customersTable"
                                  emptyMessage="No se encontró ninguna idea con esa palabra"
-                                 rows="5" paginatorPosition="both" paginator="true"
+                                 rows="5"  paginator="true"  paginatorPosition="top"
                                  paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
                                  currentPageReportTemplate="{startRecord}-{endRecord} of {totalRecords} records"
                                  rowsPerPageTemplate="5,10,{ShowAll|'All'}">
-                        <f:facet  name="header">
-                            <div class="p">
-                                <p:inputText class="buscar" id="globalFilter" onkeyup="PF('customersTable').filter()"  placeholder="Buscar....."/>
-                            </div>
-                        </f:facet>
-                        <p:column headerText="Nombre"  sortBy="#{item.name}" filterBy="#{item.name}" filterMatchMode="contains">
+
+                        <p:column class="centradas" headerText="Nombre"  sortBy="#{item.name}">
                             <h:outputText  value="#{item.name}" />
                         </p:column>
-                        <p:column headerText="Palabras"  sortBy="#{item.keyWords}" filterBy="#{item.keyWords}" filterMatchMode="contains">
+                        <p:column class="centradas"  headerText="Usuario" sortBy="#{item.name}">
+                            <h:outputText  value="#{item.proponent}" />
+                        </p:column>
+                        <p:column headerText="Palabras" sortBy="#{item.keyWords}" filterBy="#{item.keyWords}"  filterMatchMode="contains">
                             <h:outputText value="#{item.keyWords}" />
                         </p:column>
-                        <p:column   headerText="Description"  filterMatchMode="contains">
-                            <h:outputText  value="#{item.description}" />
-                        </p:column>
-                        <p:column  class="centradas"  headerText="Fecha" filterMatchMode="contains" >
+
+                        <p:column  class="centradas" sortBy="#{item.fecha}" headerText="Fecha"  >
                             <h:outputText value="#{item.fecha}" />
                         </p:column>
-                        <p:column  class="centradas" headerText="Estado" filterMatchMode="contains">
+                        <p:column  class="centradas" sortBy="#{item.estado}" headerText="Estado" >
                             <h:outputText   value="#{item.estado}" />
                         </p:column>
                     </p:dataTable>
