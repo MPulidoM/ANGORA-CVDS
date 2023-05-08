@@ -27,14 +27,15 @@ public class BarChartBean {
     public void onAppReady (){
         chartModel = new BarChartModel();
         BarChartSeries s = new BarChartSeries();
-        s.setLabel("Cantidad de Ideas");
+        s.setLabel("Cantidad de Ideas por Area");
 
         dataService.getBarChartData(s);
 
         chartModel.addSeries(s);
-        chartModel.setLegendPosition("e");
+        chartModel.setLegendPosition("n");
         Axis y = chartModel.getAxis(AxisType.Y);
         y.setMin(0);
+        y.setTickInterval("1");
         y.setMax(10);
         y.setLabel("Cantidad");
 
