@@ -44,7 +44,6 @@ public class Ideas {
     }
 
 
-
     public Ideas() {
     }
 
