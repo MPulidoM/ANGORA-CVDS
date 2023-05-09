@@ -3,6 +3,9 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui"
       xmlns:f="http://java.sun.com/jsf/core">
+<f:metadata>
+    <f:event type="preRenderView" listener="#{ideasBean.chargueIdeas()}" />
+</f:metadata>
 <h:head>
     <title>Angora Inicio</title>
     <link rel="stylesheet" type="text/css" href="consulta.css"/>
@@ -28,27 +31,27 @@
                                  value="#{ideasBean.keyWords}"/>
                 </div>
                 <div id="contenedor">
-                    <h:dataTable id="table1" value="#{ideasBean.consultKeywords()}" var="item" border="1"
+                    <p:dataTable id="table1" value="#{ideasBean.ideasList}" var="item" border="1"
                                  class="content-table">
                         <f:facet name="header">
                             <h:outputText class="out" value="Ofertas disponibles en esas fechas"/>
                         </f:facet>
-                        <h:column>
+                        <p:column sortBy="#{item.name}">
                             <f:facet name="header">
                                 <h:outputText class="out" value="Nombre"/>
                             </f:facet>
                             <h:outputText class="out" value="#{item.name}"/>
-                        </h:column>
-                        <h:column>
+                        </p:column >
+                        <p:column sortBy="#{item.keyWords}" filterBy="#{item.keyWords}">
                             <f:facet name="header">
                                 <h:outputText class="out" value="Palabra Clave"/>
                             </f:facet>
                             <h:outputText class="out" value="#{item.keyWords}"/>
-                        </h:column>
-                        <h:column >
+                        </p:column>
+                        <p:column >
                             <h:commandButton action="#{ideasBean.chargueIdea(item)}" value="Ver" />
-                        </h:column>
-                    </h:dataTable>
+                        </p:column>
+                    </p:dataTable>
                 </div>
             </h:form>
         </div>

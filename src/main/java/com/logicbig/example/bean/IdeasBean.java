@@ -27,7 +27,7 @@ public class IdeasBean {
     private String ocupacion;
     private String keyWords;
     private String proponentArea;
-
+    private List<Ideas> ideasList = new ArrayList<>();
     private String estado;
     private String message;
 
@@ -126,6 +126,12 @@ public class IdeasBean {
     public void setEstado(String estado) {
         this.estado = estado;
     }
+
+    public List<Ideas> getIdeasList() {return ideasList;}
+
+    public void setIdeasList(List<Ideas> ideasList) {this.ideasList = ideasList;}
+
+    public List<Ideas> chargueIdeas(){this.ideasList = ideaService.getAllIdeas(); return ideasList;}
 
     public void addIdea() {
         Users user = userService.getUser(UserBean.username);
