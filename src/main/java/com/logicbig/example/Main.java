@@ -35,7 +35,11 @@ public class Main{
             userService.addUser(new Users("AdminAngora","Ad101Angora","Carlos Leal","Administrador","Empleado",45,"Sistemas","Adminastor.Angora@gmail.com"));
             userService.addUser(new Users("Mpulido23","lhanna.23","Mariana Pulido","Proponente","Estudiante",20,"Matematicas","mpm@gmail.com"));
             userService.addUser(new Users("AmbientalINC.ADMIN","pro.ambiental","Alberto Pardo","Cliente","Gerente de Proyectos ",39,"Deporte","ProyectosPlaneta@ambientalINC.com"));
-            ideasService.addIdeas(new Ideas("Reciclaje a 3 pasos","Ambiental","Campaña de nuevos metodos verdes","Mpulido23","estudiante","Clasificacion de residuos, ambiental, verde, ecofriendly","Reciclaje"));
+            ideasService.addIdeas(new Ideas("Reciclaje a 1 pasos","Ambiental","Campaña de nuevos metodos verdes","Mpulido23","estudiante","Clasificacion de residuos, ambiental, verde, ecofriendly","Sociales"));
+            ideasService.addIdeas(new Ideas("Reciclaje a 2 pasos","Ambiental","Campaña de nuevos metodos verdes","Mpulido23","estudiante","Clasificacion de residuos, ambiental, verde, ecofriendly","Administracion"));
+            ideasService.addIdeas(new Ideas("Reciclaje a 3 pasos","Ambiental","Campaña de nuevos metodos verdes","Mpulido23","estudiante","Clasificacion de residuos, ambiental, verde, ecofriendly","Matematicas"));
+            ideasService.addIdeas(new Ideas("Reciclaje a 4 pasos","Ambiental","Campaña de nuevos metodos verdes","Mpulido23","estudiante","Clasificacion de residuos, ambiental, verde, ecofriendly","Sistemas"));
+            ideasService.addIdeas(new Ideas("Reciclaje a 5 pasos","Ambiental","Campaña de nuevos metodos verdes","Mpulido23","estudiante","Clasificacion de residuos, ambiental, verde, ecofriendly","Sistemas"));
             ideasService.addIdeas(new Ideas("pañales","Ambiental","Campaña de nuevos pañales","Mpulido23","estudiante","niños, pañal, rojo, ecofriendly","Reciclaje"));
             ideasService.addIdeas(new Ideas("pañales2.0","Social","Campaña de nuevos pañales2.0","Mpulido23","estudiante","llorone,niños, pañal, verde, ecofriendly","Reciclaje"));
             ideasService.addIdeas(new Ideas("computadores","Tecnología","Campaña Tecnología","Mpulido23","estudiante","mundo,tecnologia","Reciclaje"));

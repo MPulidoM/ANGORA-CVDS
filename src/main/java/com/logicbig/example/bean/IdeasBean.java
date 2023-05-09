@@ -27,7 +27,7 @@ public class IdeasBean {
     private String ocupacion;
     private String keyWords;
     private String proponentArea;
-
+    private List<Ideas> ideasList = new ArrayList<>();
     private String estado;
     private String message;
 
@@ -131,6 +131,12 @@ public class IdeasBean {
         this.filteredIdeas = filteredIdeas;
     }
 
+    public List<Ideas> getIdeasList() {return ideasList;}
+
+    public void setIdeasList(List<Ideas> ideasList) {this.ideasList = ideasList;}
+
+    public List<Ideas> chargueIdeas(){this.ideasList = ideaService.getAllIdeas(); return ideasList;}
+
     public void addIdea() {
         Users user = userService.getUser(UserBean.username);
         ideaService.addIdeas(new Ideas( name, topic, description, user.getUsername(), user.getRol(), keyWords, user.getArea()));
@@ -138,10 +144,9 @@ public class IdeasBean {
     }
 
 
-    public List<Ideas> consultKeywords(String value) {
+    public List<Ideas> consultKeywords (){
         List<Ideas> ideas = new ArrayList<>();
-        if (value != null) {
-            System.out.println("Llegue aquí");
+        if (keyWords != null) {
             for (Ideas idea : ideaService.getAllIdeas()) {
                 if (idea.getKeyWords().contains(keyWords)) {
                     System.out.println("-----------------------; " + keyWords + idea.getName());
@@ -180,7 +185,18 @@ public class IdeasBean {
 
     public void callbackSearch() {
         System.out.println("Valor: " + this.keyWords);
-        this.setFilteredIdeas(this.consultKeywords(this.keyWords));
+        this.setFilteredIdeas(this.consultKeywords());
+    }
+
+    public String chargueIdea(Ideas ideas){
+        this.name = ideas.getName();
+        this.description = ideas.getDescription();
+        this.proponent = ideas.getProponent();
+        this.proponentArea = ideas.getProponentArea();
+        this.keyWords = ideas.getKeyWords();
+        this.topic = ideas.getTopic();
+        this.fecha = ideas.getFecha();
+        return "idea.xhtml?faces-redirect=true";
     }
 
 }
