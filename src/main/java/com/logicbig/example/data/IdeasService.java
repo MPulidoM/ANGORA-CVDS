@@ -47,18 +47,7 @@ public class IdeasService {
         ideas.setEstado(estado);
         changueEdit(ideas);
     }
-    public void changueLike(Ideas ideas, int like){
-        like = (like == 0) ? ideas.darLike() : like;
-        //ideas.setEstado(estado);
-        changueEdit(ideas);
-    }
-    public int darLike(){
-        int cont = 0;
-        //if (like == true){
-        cont += 1;
-        //}
-        return cont;
 
-    }
+
 
 }

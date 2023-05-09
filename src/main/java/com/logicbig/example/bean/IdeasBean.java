@@ -31,6 +31,8 @@ public class IdeasBean {
     private String estado;
     private String message;
 
+
+
     private List<Ideas> filteredIdeas = new ArrayList<>();
     public IdeasService getIdeaService() {
         return ideaService;
@@ -181,6 +183,13 @@ public class IdeasBean {
     public void callbackSearch() {
         System.out.println("Valor: " + this.keyWords);
         this.setFilteredIdeas(this.consultKeywords(this.keyWords));
+    }
+    public void meGustaAction(Ideas item) {
+        item.incrementLikesCount();
+    }
+
+    public int getLikesCount(Ideas item) {
+        return item.getLikesCount();
     }
 
 
