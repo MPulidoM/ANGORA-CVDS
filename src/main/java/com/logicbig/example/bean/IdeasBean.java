@@ -183,4 +183,5 @@ public class IdeasBean {
         this.setFilteredIdeas(this.consultKeywords(this.keyWords));
     }
 
+
 }

@@ -24,6 +24,8 @@ public class Ideas {
 
     private boolean edit;
 
+    //private boolean like;
+
 
 
     public Ideas() {
@@ -41,6 +43,7 @@ public class Ideas {
         this.proponentArea = proponentArea;
         this.estado = "pendiente";
         this.edit = false;
+        //this.like = false;
     }
 
     public String getName() {
@@ -115,10 +118,22 @@ public class Ideas {
         this.estado = estado;
     }
 
+    public int darLike(){
+        int cont = 0;
+        //if (like == true){
+            cont += 1;
+        //}
+        return cont;
+
+    }
+
+
 
     public boolean isEdit() {return edit;}
 
     public void setEdit(boolean edit) {this.edit = edit;}
+
+
 
     @Override
     public int hashCode() {
