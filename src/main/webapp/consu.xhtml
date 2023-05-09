@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+<f:metadata>
+    <f:event type="preRenderView" listener="#{ideasBean.chargueIdeas()}" />
+</f:metadata>
+<h:head>
+    <title>Angora Inicio</title>
+    <link rel="stylesheet" type="text/css" href="consulta.css"/>
+    <link rel="icon" href="/imagenes/logo.png"/>
+</h:head>
+<h:body>
+    <div id="general">
+        <header class="header">
+            <div class="logo">
+                <img src="/imagenes/cliente.jpg" alt="Perfil"/>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><img src="/imagenes/logo3.png" alt="Perfil"/></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="consulta">
+            <h:form>
+                <div class="search">
+                    <span class="icon"><i class="fa fa-search"></i></span>
+                    <p:inputText type="search" id="search" placeholder="Buscar..." class="sea"
+                                 value="#{ideasBean.keyWords}"/>
+                </div>
+                <div id="contenedor">
+                    <p:dataTable id="table1" value="#{ideasBean.ideasList}" var="item" border="1"
+                                 class="content-table">
+                        <f:facet name="header">
+                            <h:outputText class="out" value="Ofertas disponibles en esas fechas"/>
+                        </f:facet>
+                        <p:column sortBy="#{item.name}">
+                            <f:facet name="header">
+                                <h:outputText class="out" value="Nombre"/>
+                            </f:facet>
+                            <h:outputText class="out" value="#{item.name}"/>
+                        </p:column >
+                        <p:column sortBy="#{item.keyWords}" filterBy="#{item.keyWords}">
+                            <f:facet name="header">
+                                <h:outputText class="out" value="Palabra Clave"/>
+                            </f:facet>
+                            <h:outputText class="out" value="#{item.keyWords}"/>
+                        </p:column>
+                        <p:column >
+                            <h:commandButton action="#{ideasBean.chargueIdea(item)}" value="Ver" />
+                        </p:column>
+                    </p:dataTable>
+                </div>
+            </h:form>
+        </div>
+    </div>
+</h:body>
+</html>
