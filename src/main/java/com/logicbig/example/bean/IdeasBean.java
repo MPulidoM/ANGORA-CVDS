@@ -185,7 +185,7 @@ public class IdeasBean {
 
     public void callbackSearch() {
         System.out.println("Valor: " + this.keyWords);
-        this.setFilteredIdeas(this.consultKeywords(this.keyWords));
+        this.setFilteredIdeas(this.consultKeywords());
     }
 
     public String chargueIdea(Ideas ideas){
