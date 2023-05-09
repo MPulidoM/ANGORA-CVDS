@@ -28,7 +28,7 @@ public class DataService {
 
     public BarChartSeries getBarChartData(@NotNull BarChartSeries series) {
         series.set("Sistemas", ideasBean.groupedByIdeas("Sistemas").size());
-        series.set("Matematicas", ideasBean.groupedByIdeas("Matemáticas").size());
+        series.set("Matematicas", ideasBean.groupedByIdeas("Matematicas").size());
         series.set("Sociales", ideasBean.groupedByIdeas("Sociales").size());
         series.set("Administracion", ideasBean.groupedByIdeas("Administracion").size());
         return series;

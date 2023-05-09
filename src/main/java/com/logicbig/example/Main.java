@@ -40,7 +40,11 @@ public class Main{
             ideasService.addIdeas(new Ideas("Reciclaje a 3 pasos","Ambiental","Campaña de nuevos metodos verdes","Mpulido23","estudiante","Clasificacion de residuos, ambiental, verde, ecofriendly","Matematicas"));
             ideasService.addIdeas(new Ideas("Reciclaje a 4 pasos","Ambiental","Campaña de nuevos metodos verdes","Mpulido23","estudiante","Clasificacion de residuos, ambiental, verde, ecofriendly","Sistemas"));
             ideasService.addIdeas(new Ideas("Reciclaje a 5 pasos","Ambiental","Campaña de nuevos metodos verdes","Mpulido23","estudiante","Clasificacion de residuos, ambiental, verde, ecofriendly","Sistemas"));
-
+            ideasService.addIdeas(new Ideas("pañales","Ambiental","Campaña de nuevos pañales","Mpulido23","estudiante","niños, pañal, rojo, ecofriendly","Reciclaje"));
+            ideasService.addIdeas(new Ideas("pañales2.0","Social","Campaña de nuevos pañales2.0","Mpulido23","estudiante","llorone,niños, pañal, verde, ecofriendly","Reciclaje"));
+            ideasService.addIdeas(new Ideas("computadores","Tecnología","Campaña Tecnología","Mpulido23","estudiante","mundo,tecnologia","Reciclaje"));
+            ideasService.addIdeas(new Ideas("Tableros","Educación","Campaña de Educación","Mpulido23","estudiante","niños, estudiantes","Reciclaje"));
+            ideasService.addIdeas(new Ideas("Muebles","Infraestructura","Campaña de nuevos muebles","Mpulido23","estudiante","muebles,nuevos, verde, ecofriendly","Reciclaje"));
             System.out.println("\nGetting all configs....");
             userService.getAllUsers().forEach(configuration -> System.out.println(configuration));
         };

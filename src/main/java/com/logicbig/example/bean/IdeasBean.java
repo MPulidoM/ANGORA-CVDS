@@ -31,6 +31,7 @@ public class IdeasBean {
     private String estado;
     private String message;
 
+    private List<Ideas> filteredIdeas = new ArrayList<>();
     public IdeasService getIdeaService() {
         return ideaService;
     }
@@ -126,6 +127,9 @@ public class IdeasBean {
     public void setEstado(String estado) {
         this.estado = estado;
     }
+    public void setFilteredIdeas(List<Ideas> filteredIdeas) {
+        this.filteredIdeas = filteredIdeas;
+    }
 
     public List<Ideas> getIdeasList() {return ideasList;}
 
@@ -173,6 +177,15 @@ public class IdeasBean {
             }
         }
         return ideas;
+    }
+
+    public void onLoadView () {
+        //this.keyWords = null;
+    }
+
+    public void callbackSearch() {
+        System.out.println("Valor: " + this.keyWords);
+        this.setFilteredIdeas(this.consultKeywords(this.keyWords));
     }
 
     public String chargueIdea(Ideas ideas){

@@ -2,10 +2,13 @@ package com.logicbig.example.bean;
 
 import com.logicbig.example.data.UserService;
 import com.logicbig.example.data.Users;
+import org.primefaces.PrimeFaces;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
+import javax.faces.context.FacesContext;
 import java.util.List;
 
 @Component
@@ -111,9 +114,8 @@ import java.util.List;
     public void addUser() {
 
        if (userService.userExist(username)){
-           message = "Este usuario ya existe";
-           System.out.println(userService.getUser(username));
-           System.out.println(message);
+           FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_FATAL,"ERROR","Este usuario ya existe"));
+           PrimeFaces.current().ajax().update("messages");
        } else {
            userService.addUser(new Users(username, password, personalName, profile,rol, age, area, email));
            message = " ";
@@ -125,12 +127,14 @@ import java.util.List;
         if (userService.userExist(username)) {
             if(userService.getUser(username).getPassword().equals(password)){
                 bandera = perfileValidation();
-                message = "Bienvenido Angora";
             }else {
-                message = "Clave incorrecta";
+                FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN,"CLAVE","Clave incorrecta"));
+                PrimeFaces.current().ajax().update("messages");
             }
         } else {
-            message = "Usuario no valido";
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,"USUARIO","Usuario no valido"));
+            PrimeFaces.current().ajax().update("messages");
+
         }
 
         return bandera;
@@ -139,12 +143,12 @@ import java.util.List;
     public String perfileValidation (){
         String perfile = userService.getUser(username).getProfile();
         if ( perfile.equals("Proponente")) {
-            return "consuPro.xhtml?faces-redirect=true";
+            return "consultaPro.xhtml?faces-redirect=true";
         }
         else if (perfile.equals("Administrador")) {
             return "administrador.xhtml?faces-redirect=true";
         } else {
-            return "consu.xhtml?faces-redirect=true";
+            return "consulta.xhtml?faces-redirect=true";
         }
     }
 
