@@ -10,6 +10,7 @@
     <title>Angora Inicio</title>
     <link rel="stylesheet" type="text/css" href="consulta.css"/>
     <link rel="icon" href="/imagenes/logo.png"/>
+
 </h:head>
 
 <h:body>
@@ -60,6 +61,14 @@
                         <p:column  class="centradas" sortBy="#{item.estado}" headerText="Estado" >
                             <h:outputText   value="#{item.estado}" />
                         </p:column>
+                        <p:column  class="centradas" sortBy="#{item.estado}" headerText="Estado" >
+                            <h:outputText   value="#{item.estado}" />
+                        </p:column>
+                        <p:column>
+                            <p:commandButton value="Me gusta" actionListener="#{ideasBean.meGustaAction(item)}" update="likesCount" />
+                            <h:outputText id="likesCount" value="#{ideasBean.getLikesCount(item)}" />
+                        </p:column>
+
                     </p:dataTable>
                 </div>
             </h:form>

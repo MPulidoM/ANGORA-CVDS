@@ -31,6 +31,8 @@ public class IdeasBean {
     private String estado;
     private String message;
 
+
+
     private List<Ideas> filteredIdeas = new ArrayList<>();
     public IdeasService getIdeaService() {
         return ideaService;
@@ -198,5 +200,13 @@ public class IdeasBean {
         this.fecha = ideas.getFecha();
         return "idea.xhtml?faces-redirect=true";
     }
+    public void meGustaAction(Ideas item) {
+        item.incrementLikesCount();
+    }
+
+    public int getLikesCount(Ideas item) {
+        return item.getLikesCount();
+    }
+
 
 }

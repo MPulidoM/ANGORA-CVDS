@@ -24,6 +24,24 @@ public class Ideas {
 
     private boolean edit;
 
+    private int likesCount = 0;
+
+    public void setLikesCount(int likesCount) {
+        this.likesCount = likesCount;
+    }
+
+    public void incrementLikesCount() {
+        likesCount += 1;
+        setLikesCount(likesCount);
+        System.out.println(likesCount);
+    }
+
+    public int getLikesCount() {
+        incrementLikesCount();
+        System.out.println(likesCount);
+        return likesCount;
+
+    }
 
 
     public Ideas() {
@@ -41,6 +59,7 @@ public class Ideas {
         this.proponentArea = proponentArea;
         this.estado = "pendiente";
         this.edit = false;
+
     }
 
     public String getName() {
@@ -115,10 +134,11 @@ public class Ideas {
         this.estado = estado;
     }
 
-
     public boolean isEdit() {return edit;}
 
     public void setEdit(boolean edit) {this.edit = edit;}
+
+
 
     @Override
     public int hashCode() {
