@@ -70,7 +70,7 @@
                             <h:outputText value="#{item.estado}" rendered="#{not item.edit}"/>
                             <h:selectOneMenu value="#{estado}" rendered="#{item.edit}">
                                 <f:selectItem itemLabel="Cambie el estado" selected="selected" itemDisable="true"/>
-                                <f:selectItem itemValue="Revisión" itemLabel="Revisión"/>
+                                <f:selectItem itemValue="Revision" itemLabel="Revision"/>
                                 <f:selectItem itemValue="Aprobada" itemLabel="Aprobada"/>
                                 <f:selectItem itemValue="Denegada" itemLabel="Denegada"/>
                             </h:selectOneMenu>
@@ -79,7 +79,7 @@
                             <f:facet name="header">
                                 <h:outputText value="Acciones" />
                             </f:facet>
-                            <h:commandButton action="#{ideasService.changueLike(item, estado)}" value="Guardar" rendered="#{item.edit}"/>
+                            <h:commandButton action="#{ideasService.changueEstado(item, estado)}" value="Guardar" rendered="#{item.edit}"/>
                             <h:commandButton action="#{ideasService.changueEdit(item)}" value="Editar" rendered="#{not item.edit}"/>
                         </h:column>
                     </h:dataTable>

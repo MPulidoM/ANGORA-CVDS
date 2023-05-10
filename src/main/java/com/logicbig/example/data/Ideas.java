@@ -57,7 +57,7 @@ public class Ideas {
         this.ocupacion = ocupacion;
         this.keyWords = keyWords;
         this.proponentArea = proponentArea;
-        this.estado = "pendiente";
+        this.estado = "Pendiente";
         this.edit = false;
 
     }
