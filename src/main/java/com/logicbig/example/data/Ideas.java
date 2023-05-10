@@ -26,24 +26,6 @@ public class Ideas {
 
     private int likesCount = 0;
 
-    public void setLikesCount(int likesCount) {
-        this.likesCount = likesCount;
-    }
-
-    public void incrementLikesCount() {
-        likesCount += 1;
-        setLikesCount(likesCount);
-        System.out.println(likesCount);
-    }
-
-    public int getLikesCount() {
-        incrementLikesCount();
-        System.out.println(likesCount);
-        return likesCount;
-
-    }
-
-
     public Ideas() {
     }
 
@@ -59,6 +41,7 @@ public class Ideas {
         this.proponentArea = proponentArea;
         this.estado = "Pendiente";
         this.edit = false;
+        this.likesCount = 0;
 
     }
 
@@ -138,7 +121,22 @@ public class Ideas {
 
     public void setEdit(boolean edit) {this.edit = edit;}
 
+    public void setLikesCount(int likesCount) {
+        this.likesCount = likesCount;
+    }
 
+    public void incrementLikesCount() {
+        likesCount += 1;
+        setLikesCount(likesCount);
+        System.out.println(likesCount);
+    }
+
+    public int getLikesCount() {
+        incrementLikesCount();
+        System.out.println(likesCount);
+        return likesCount;
+
+    }
 
     @Override
     public int hashCode() {
