@@ -134,7 +134,6 @@ import java.util.List;
         } else {
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,"USUARIO","Usuario no valido"));
             PrimeFaces.current().ajax().update("messages");
-
         }
 
         return bandera;

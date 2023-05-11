@@ -16,7 +16,7 @@
     </parent>
 
     <properties>
-        <java.version>1.8</java.version>
+        <java.version>20.0</java.version>
     </properties>
     <dependencies>
         <dependency>
@@ -38,7 +38,7 @@
         <dependency>
             <groupId>org.primefaces</groupId>
             <artifactId>primefaces</artifactId>
-            <version>8.0</version>
+            <version>12.0.0</version>
         </dependency>
         <dependency>
             <groupId>com.sun.faces</groupId>
@@ -56,12 +56,7 @@
             <artifactId>tomcat-embed-jasper</artifactId>
             <scope>provided</scope>
         </dependency>
-        <dependency>
-            <groupId>org.jetbrains</groupId>
-            <artifactId>annotations</artifactId>
-            <version>RELEASE</version>
-            <scope>compile</scope>
-        </dependency>
+
 
     </dependencies>
 

@@ -86,7 +86,7 @@
                                 <h:outputText value="Acciones" />
                             </f:facet>
                             <h:commandButton action="#{userService.changueProfile(item, profile)}" value="Guardar" rendered="#{item.edit}"/>
-                            <h:commandButton action="#{userService.changueEdit(item)}" value="Editar" rendered="#{not item.edit}"/>
+                            <h:commandButton action="#{userService.changueEdit(item)}" value="Editar" rendered="#{not item.edit}" accesskey="true"/>
                         </h:column>
                     </h:dataTable>
                 </div>
