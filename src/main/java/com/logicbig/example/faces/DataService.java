@@ -2,7 +2,6 @@ package com.logicbig.example.faces;
 
 import com.logicbig.example.bean.IdeasBean;
 import com.logicbig.example.data.Ideas;
-import org.jetbrains.annotations.NotNull;
 import org.primefaces.model.chart.BarChartSeries;
 import org.primefaces.model.chart.ChartSeries;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +25,7 @@ public class DataService {
        return map;
     }
 
-    public BarChartSeries getBarChartData(@NotNull BarChartSeries series) {
+    public BarChartSeries getBarChartData( BarChartSeries series) {
         series.set("Sistemas", ideasBean.groupedByIdeas("Sistemas").size());
         series.set("Matematicas", ideasBean.groupedByIdeas("Matematicas").size());
         series.set("Sociales", ideasBean.groupedByIdeas("Sociales").size());

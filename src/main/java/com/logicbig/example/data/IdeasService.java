@@ -9,6 +9,8 @@ import java.util.List;
 public class IdeasService {
 
     private final IdeaRepository ideaRepository;
+    @Autowired
+    private LikeService likeService;
 
     @Autowired
     public IdeasService(IdeaRepository ideaRepository){
@@ -48,6 +50,34 @@ public class IdeasService {
         changueEdit(ideas);
     }
 
+    public void changueLike(Ideas ideas, String username){
+        int valor = validationLike(ideas.getName(),username);
+        ideas.setLikesCount(ideas.getLikesCount()+valor);
+        addIdeas(ideas);
+    }
 
+    public int validationLike(String ideaName,String username){
+        int valor = 0;
+        boolean existLike = userLike(ideaName, username);
 
+        if (existLike) {
+            valor = -1;
+        } else {
+            valor = 1;
+            likeService.addLike(ideaName, username);
+        }
+        return valor;
+    }
+
+    public boolean userLike(String ideaName,String username) {
+        boolean bandera = false;
+        for (Likes i: likeService.getAllLikes() ){
+            if (i.getUsername().equals(username) && i.getDescription().equals(ideaName)) {
+                likeService.deleteLike(i.getIdd());
+                bandera = true;
+                break;
+            }
+        }
+        return bandera;
+    }
 }
