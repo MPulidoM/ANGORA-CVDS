@@ -1,5 +1,4 @@
 package com.logicbig.example.data;
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.util.Objects;
