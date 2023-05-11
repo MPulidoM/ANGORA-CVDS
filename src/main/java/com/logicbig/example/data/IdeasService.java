@@ -19,14 +19,14 @@ public class IdeasService {
 
     public Ideas addIdeas(Ideas ideas) { return ideaRepository.save(ideas);}
 
-    public Ideas getIdea(String keyWords){
-        return ideaRepository.findByKeyWords(keyWords).get(0);
+    public Ideas getIdea(String name){
+        return ideaRepository.findByName(name).get(0);
     }
     public List<Ideas> getAllIdeas(){
         return ideaRepository.findAll();
     }
     public Ideas updateIdeas(Ideas ideas){
-        if(ideaRepository.findByKeyWords(ideas.getKeyWords()).size() == 0){
+        if(ideaRepository.findByName(ideas.getName()).size() == 0){
             return ideaRepository.save(ideas);
         }
         return null;

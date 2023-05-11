@@ -36,16 +36,10 @@
                         <f:facet name="header">
                             <h:outputText class="out" value="Ofertas disponibles en esas fechas"/>
                         </f:facet>
-                        <p:column sortBy="#{item.name}">
-                            <f:facet name="header">
-                                <h:outputText class="out" value="Nombre"/>
-                            </f:facet>
+                        <p:column class="centradas" headerText="Nombre"  sortBy="#{item.name}">
                             <h:outputText class="out" value="#{item.name}"/>
                         </p:column >
-                        <p:column sortBy="#{item.keyWords}" filterBy="#{item.keyWords}">
-                            <f:facet name="header">
-                                <h:outputText class="out" value="Palabra Clave"/>
-                            </f:facet>
+                        <p:column class="centradas" headerText="Palabras Clave" sortBy="#{item.keyWords}" filterBy="#{item.keyWords}" filterMatchMode="contains">
                             <h:outputText class="out" value="#{item.keyWords}"/>
                         </p:column>
                         <p:column >

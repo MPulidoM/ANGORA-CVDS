@@ -25,7 +25,8 @@
             <p>Area del Proponente:</p>
             <h:outputText value="#{ideasBean.proponentArea}"/>
 
-
+            <p:commandButton value="Me gusta" actionListener="#{ideasService.changueLike(ideasService.getIdea(ideasBean.name), userBean.username)}" />
+            <p:commandButton value="Devolver" actionListener="consu.xhtml?faces-redirect=true" />
         </div>
 
     </h:form>
