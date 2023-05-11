@@ -28,23 +28,13 @@ import java.util.List;
     private int age;
     static String area;
     private String email;
-    private String message;
 
     public UserBean() {
         this.username = "";
         this.password = "";
-        this.message = "";
         this.personalName = "";
         this.profile = "";
         this.rol = "";
-    }
-
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
     }
 
     public String getUsername() {
@@ -118,7 +108,6 @@ import java.util.List;
            PrimeFaces.current().ajax().update("messages");
        } else {
            userService.addUser(new Users(username, password, personalName, profile,rol, age, area, email));
-           message = " ";
        }
 
     }
