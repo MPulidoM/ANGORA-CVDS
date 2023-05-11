@@ -3,6 +3,9 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui"
       xmlns:f="http://java.sun.com/jsf/core">
+<f:metadata>
+    <f:event type="preRenderView" listener="#{ideasBean.chargueIdeas()}" />
+</f:metadata>
 <h:head>
     <title>Angora Inicio</title>
     <link rel="stylesheet" type="text/css" href="consulta.css"/>
@@ -33,7 +36,7 @@
         <div class="consulta">
             <h:form>
                 <div id="contenedor">
-                    <p:dataTable value="#{ideasService.getAllIdeas()}" var="item"  widgetVar="customersTable"
+                    <p:dataTable value="#{ideasBean.ideasList}" var="item"  widgetVar="customersTable"
                                  emptyMessage="No se encontró ninguna idea con esa palabra"
                                  rows="5"  paginator="true"  paginatorPosition="top"
                                  paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
@@ -43,7 +46,7 @@
                         <p:column class="centradas" headerText="Nombre"  sortBy="#{item.name}">
                             <h:outputText  value="#{item.name}" />
                         </p:column>
-                        <p:column class="centradas"  headerText="Usuario" sortBy="#{item.name}">
+                        <p:column class="centradas"  headerText="Usuario" sortBy="#{item.proponent}">
                             <h:outputText  value="#{item.proponent}" />
                         </p:column>
                         <p:column headerText="Palabras" sortBy="#{item.keyWords}" filterBy="#{item.keyWords}"  filterMatchMode="contains">

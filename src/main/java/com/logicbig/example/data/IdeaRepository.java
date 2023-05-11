@@ -5,5 +5,5 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 @Repository
 public interface IdeaRepository extends JpaRepository<Ideas, Long> {
-    List<Ideas> findByKeyWords(String keyWords);
+    List<Ideas> findByName(String name);
 }
