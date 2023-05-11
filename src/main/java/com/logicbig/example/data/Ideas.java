@@ -24,7 +24,7 @@ public class Ideas {
 
     private boolean edit;
 
-    private int likesCount = 0;
+    private int likesCount;
 
     public Ideas() {
     }
@@ -125,17 +125,8 @@ public class Ideas {
         this.likesCount = likesCount;
     }
 
-    public void incrementLikesCount() {
-        likesCount += 1;
-        setLikesCount(likesCount);
-        System.out.println(likesCount);
-    }
-
     public int getLikesCount() {
-        incrementLikesCount();
-        System.out.println(likesCount);
         return likesCount;
-
     }
 
     @Override

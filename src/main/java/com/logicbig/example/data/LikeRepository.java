@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import java.util.List;
 @Repository
-public interface IdeaRepository extends JpaRepository<Ideas, Long> {
-    List<Ideas> findByKeyWords(String keyWords);
+public interface LikeRepository extends JpaRepository<Likes, Long> {
+    List<Likes> findByIdd(long idd);
 }
