@@ -181,10 +181,6 @@ public class IdeasBean {
         return ideas;
     }
 
-    public void onLoadView () {
-        //this.keyWords = null;
-    }
-
     public void callbackSearch() {
         System.out.println("Valor: " + this.keyWords);
         this.setFilteredIdeas(this.consultKeywords());
@@ -200,10 +196,5 @@ public class IdeasBean {
         this.fecha = ideas.getFecha();
         return "idea.xhtml?faces-redirect=true";
     }
-
-    public int getLikesCount(Ideas item) {
-        return item.getLikesCount();
-    }
-
 
 }
