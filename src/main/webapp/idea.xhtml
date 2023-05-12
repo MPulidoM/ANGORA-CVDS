@@ -8,7 +8,7 @@
     <f:event type="preRenderView" listener="#{commentsService.getIdeaComments(ideasBean.name)}" />
 </f:metadata>
 <h:head>
-    <title>Ideas Page</title>
+    <title> idea <h:outputText value="#{ideasBean.name}"/></title>
     <link rel="stylesheet" type="text/css" href="idea.css"/>
     <link rel="icon" href="/imagenes/logo.png"/>
 </h:head>
