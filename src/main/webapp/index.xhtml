@@ -8,12 +8,43 @@
 	  xmlns:f="http://java.sun.com/jsf/core">
 <f:metadata>
 	<f:event type="preRenderView" listener="#{barChartBean.onAppReady()}" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </f:metadata>
 <h:head>
+	<title>Reporte Page</title>
+	<link rel="stylesheet" type="text/css" href="graficas.css"/>
+	<link rel="icon" href="/imagenes/logo.png"/>
 </h:head>
+<header class="header">
+	<div class="logo">
+		<div class="dropdown" >
+			<img src="/imagenes/cliente.jpg" alt="Perfil"/>
+			<div class="dropdown-content">
+				<a href="administrador.xhtml">Ver perfil</a>
+				<a href="reporte.xhtml">Reportes</a>
+				<a href="registro.xhtml">Cerrar sesion</a>
+			</div>
+		</div>
+	</div>
+	<nav>
+		<ul class="nav-links">
+			<li><img src="/imagenes/logo3.png" alt="Perfil"/></li>
+		</ul>
+	</nav>
+</header>
 
-<h:body style="margin-left:50px">
-	<h2>Grafico que cuenta las ideas por area:</h2>
-	<p:chart type="bar" model="#{barChartBean.chartModel}" style="height:400px;width:600px"/>
+<h:body>
+	<h:form>
+		<div class="grafico1">
+			<h1>Graficó que cuenta las ideas por área:</h1>
+			<p:chart type="bar" model="#{barChartBean.chartModel}" style="height:350px;width:400px"/>
+		</div>
+	</h:form>
+	<h:form>
+		<div class="grafico2">
+			<h1>Graficó que cuenta las ideas por área:</h1>
+			<p:chart  type="bar" model="#{barChartBean.chartModel}" style="height:350px;width:400px"/>
+		</div>
+	</h:form>
 </h:body>
 </html>
