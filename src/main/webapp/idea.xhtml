@@ -3,6 +3,9 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui"
       xmlns:f="http://java.sun.com/jsf/core">
+<f:metadata>
+    <f:event type="preRenderView" listener="#{commentsService.getIdeaComments(ideasBean.name)}" />
+</f:metadata>
 <h:head>
     <title>Ideas Page</title>
 
@@ -27,6 +30,23 @@
 
             <p:commandButton value="Me gusta" actionListener="#{ideasService.changueLike(ideasService.getIdea(ideasBean.name), userBean.username)}" />
             <p:commandButton value="Devolver" action="consu.xhtml?faces-redirect=true" />
+
+            <p>¿Quieres dejar tu comentario?:</p>
+            <p:inputText class="input" value="#{comment}" placeholder="Comentario"/>
+            <p:commandButton value="Comentar" action="#{commentsService.addComment(ideasBean.name, userBean.username, comment)}"  update="table1"/>
+
+            <p:dataTable id="table1" value="#{commentsService.commentsList}" var="item" >
+                <p:column class="centradas" headerText="Usuario" sortBy="#{item.username}">
+                    <h:outputText  value="#{item.username}" />
+                </p:column>
+                <p:column class="centradas"  headerText="Fecha">
+                    <h:outputText  value="#{item.date}" />
+                </p:column>
+                <p:column class="centradas"  headerText="Comentario">
+                    <h:outputText  value="#{item.comment}" />
+                </p:column>
+
+            </p:dataTable>
         </div>
 
     </h:form>

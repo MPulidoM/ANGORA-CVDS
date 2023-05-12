@@ -1,5 +1,6 @@
 package com.logicbig.example.data;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.lang.reflect.Array;
@@ -13,6 +14,7 @@ public class Ideas {
     @Id
     private String name;
     private String topic;
+    @Column(length=5000)
     private String description;
     private LocalDate fecha;
     private String proponent;
