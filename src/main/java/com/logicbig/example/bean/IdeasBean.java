@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.faces.bean.ManagedBean;
+import javax.persistence.Column;
+import javax.persistence.Entity;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -21,6 +23,7 @@ public class IdeasBean {
     private String use;
     private String name;
     private String topic;
+    @Column(length=5000)
     private String description;
     private LocalDate fecha;
     private String proponent;
