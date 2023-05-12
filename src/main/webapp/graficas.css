@@ -92,8 +92,8 @@ body{
   background-size: cover;
 }
 .grafico1{
-  width: 500px;
-  height: 420px;
+  width: 600px;
+  height: 500px;
   position: absolute;
   top: 120px;
   left: 8%;
@@ -109,8 +109,8 @@ body{
 
 }
 .grafico2{
-  width: 500px;
-  height: 420px;
+  width: 580px;
+  height: 500px;
   position: absolute;
   top: 120px;
   left: 55%;
