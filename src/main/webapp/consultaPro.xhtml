@@ -61,13 +61,12 @@
                         <p:column  class="centradas" sortBy="#{item.estado}" headerText="Estado" >
                             <h:outputText   value="#{item.estado}" />
                         </p:column>
-                        <p:column  class="centradas" sortBy="#{item.estado}" headerText="Estado" >
-                            <h:outputText   value="#{item.estado}" />
+                        <p:column>
+                            <h:commandButton action="#{ideasBean.chargueIdea(item)}" value="Ver"/>
                         </p:column>
                         <p:column>
-                            <p:commandButton value="Me gusta" actionListener="#{ideasService.changueLike(item, userBean.username)}" />
+                            <p:commandButton id="bt1" actionListener="#{ideasService.changueLike(item, userBean.username)}"  value="#{item.likesCount}" class="t2" update="bt1"/>
                         </p:column>
-
                     </p:dataTable>
                 </div>
             </h:form>

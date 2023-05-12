@@ -176,3 +176,23 @@ background: url("imagenes/m.png")no-repeat center/ cover;
 .dropdown:hover .dropbtn {
   background-color: #5593E9;
 }
+.consulta .t2{
+    background: url("imagenes/he1.png") no-repeat;
+    background-size: 100%;
+    height: 60px;
+    width: 60px;
+    transition: all 0.3s;
+    border-radius:50px;
+    color:black;
+    border-color:black;
+    font-size: 0.5em;
+
+}
+
+.consulta .t2:hover{
+    background: url("imagenes/he2.png") no-repeat;
+    background-size: 100%;
+    color: #FF2400;
+    border-radius:50px;
+    border-color:#FF2400;
+}
