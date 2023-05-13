@@ -85,8 +85,8 @@
                             <f:facet name="header">
                                 <h:outputText value="Acciones" />
                             </f:facet>
-                            <h:commandButton action="#{userService.changueProfile(item, profile)}" value="Guardar" rendered="#{item.edit}"/>
-                            <h:commandButton action="#{userService.changueEdit(item)}" value="Editar" rendered="#{not item.edit}"/>
+                            <h:commandButton action="#{userService.changueProfile(item, profile)}" value="Guardar" rendered="#{item.edit}" class="bt2"/>
+                            <h:commandButton action="#{userService.changueEdit(item)}" value="Editar" rendered="#{not item.edit}" class="bt2"/>
                         </h:column>
                     </h:dataTable>
                 </div>

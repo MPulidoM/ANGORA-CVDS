@@ -9,7 +9,7 @@
 </f:metadata>
 <h:head>
     <title> idea <h:outputText value="#{ideasBean.name}"/></title>
-    <link rel="stylesheet" type="text/css" href="idea.css"/>
+    <link rel="stylesheet" type="text/css" href="idea.css" />
     <link rel="icon" href="/imagenes/logo.png"/>
 </h:head>
 <h:body>
@@ -51,8 +51,10 @@
                     </p:fieldset>
                 </p:scrollPanel>
                 <p:inputTextarea class="inputDes" value="#{comment}" placeholder="¿Quieres dejar tu comentario?"/>
-                <p:commandButton value="Comentar" action="#{commentsService.addComment(ideasBean.name, userBean.username, comment)}"  update="table1"/>
-                <p:commandButton value="Me gusta" actionListener="#{ideasService.changueLike(ideasService.getIdea(ideasBean.name), userBean.username)}" />
+                <div class="butones">
+                    <p:commandButton value="Comentar" action="#{commentsService.addComment(ideasBean.name, userBean.username, comment)}" class="tn1" update="table1"/>
+                    <p:commandButton id="bt1" value=":3" actionListener="#{ideasService.changueLike(ideasService.getIdea(ideasBean.name), userBean.username)}" class="t2" update="bt1"/>
+                </div>
                 <p:dataTable id="table1" value="#{commentsService.commentsList}" var="item" scrollable="true"  scrollHeight="150" >
                     <p:column class="centradas" headerText="Usuario" sortBy="#{item.username}">
                         <h:outputText  value="#{item.username}" />
