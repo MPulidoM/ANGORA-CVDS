@@ -85,26 +85,25 @@
 
 .consulta{
     margin: 0;
-	padding: 0;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	min-height: 100vh;
-	font-family: 'Jost', sans-serif;
-	background: url("imagenes/blanco.jpg")no-repeat center/ cover;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Jost', sans-serif;
+    background: url("imagenes/blanco.jpg")no-repeat center/ cover;
 }
 
 
 .ui-datatable {
-
- margin-left: 50px;
+    margin-left: 50px;
     margin-right: 50px;
 }
 .ui-datatable thead th{
-   background: url("imagenes/m.png")no-repeat center/ cover;
-   font-weight: bold;
-   font-size: 0.9em;
-   color: #ffffff;
+    background: url("imagenes/m.png")no-repeat center/ cover;
+    font-weight: bold;
+    font-size: 0.9em;
+    color: #ffffff;
 
 }
 
@@ -112,69 +111,69 @@
     border-style: none !important;
 }
 .flex align-items-center justify-content-between{
- background: url("imagenes/m.png")no-repeat center/ cover;
- color: #ffffff;
+    background: url("imagenes/m.png")no-repeat center/ cover;
+    color: #ffffff;
 }
 .centradas{
- text-align: center;
+    text-align: center;
 }
 .ui-paginator{
-background: url("imagenes/m.png")no-repeat center/ cover;
-color: #ffffff;
-height: 40px;
+    background: url("imagenes/m.png")no-repeat center/ cover;
+    color: #ffffff;
+    height: 40px;
 }
 
 .buscar{
-border-radius: 20px;
+    border-radius: 20px;
 }
 .header{
-background: url("imagenes/m.png")no-repeat center/ cover;
+    background: url("imagenes/m.png")no-repeat center/ cover;
 }
 .dropdown{
     position: relative;
 }
 
 .dropbtn {
-  height: 70px;
-  width: 70px;
-  background-color: #266DD3;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border-radius: 6px;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s;
-  border-radius:50px;
+    height: 70px;
+    width: 70px;
+    background-color: #266DD3;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-radius:50px;
 }
 
 .dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  border-radius: 6px;
-  min-width: 160px;
-  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
-  z-index: 1;
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    border-radius: 6px;
+    min-width: 160px;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    z-index: 1;
 }
 
 .dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
 }
 
 .dropdown-content a:hover {
-  background-color: #f1f1f1;
-  }
+    background-color: #f1f1f1;
+}
 
 .dropdown:hover .dropdown-content {
-  display: block;
+    display: block;
 }
 
 .dropdown:hover .dropbtn {
-  background-color: #5593E9;
+    background-color: #5593E9;
 }
 .consulta .t2{
     background: url("imagenes/he1.png") no-repeat;
@@ -195,4 +194,32 @@ background: url("imagenes/m.png")no-repeat center/ cover;
     color: #FF2400;
     border-radius:50px;
     border-color:#FF2400;
+}
+
+.bt2{
+    font-weight: 700;
+    color: #ffffff;
+    padding: 2px 5px;
+    background: #283747;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+.bt2:hover{
+    background: #191970;
+}
+.consulta .bt3{
+    font-weight: 700;
+    color: #ffffff;
+    padding: 2px 5px;
+    background: #283747;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.consulta .bt3:hover{
+    background: #191970;
 }

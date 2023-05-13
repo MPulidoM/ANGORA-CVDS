@@ -21,7 +21,7 @@
                     <img src="/imagenes/cliente.jpg" alt="Perfil"/>
                     <div class="dropdown-content">
                         <a href="administrador.xhtml">Ver perfil</a>
-                        <a href="reporte.xhtml">Reportes</a>
+                        <a href="index.xhtml">Reportes</a>
                         <a href="registro.xhtml">Cerrar sesion</a>
                     </div>
                 </div>
@@ -62,7 +62,7 @@
                             <h:outputText   value="#{item.estado}" />
                         </p:column>
                         <p:column>
-                            <h:commandButton action="#{ideasBean.chargueIdea(item)}" value="Ver"/>
+                            <h:commandButton action="#{ideasBean.chargueIdea(item)}" value="Ver" class="bt2"/>
                         </p:column>
                         <p:column>
                             <p:commandButton id="bt1" actionListener="#{ideasService.changueLike(item, userBean.username)}"  value="#{item.likesCount}" class="t2" update="bt1"/>
