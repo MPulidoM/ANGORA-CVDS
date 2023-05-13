@@ -34,4 +34,14 @@ public class LikeService {
         likeRepository.flush();
     }
 
+    public int countLikesByIdea(String nameIdea){
+        int numero = 0;
+        for (Likes i: getAllLikes()){
+            if (i.getDescription().equals(nameIdea)){
+                numero++;
+            }
+        }
+        return numero;
+    }
+
 }
