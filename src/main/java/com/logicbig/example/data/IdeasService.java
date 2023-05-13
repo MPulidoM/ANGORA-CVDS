@@ -17,7 +17,10 @@ public class IdeasService {
         this.ideaRepository = ideaRepository;
     }
 
-    public Ideas addIdeas(Ideas ideas) { return ideaRepository.save(ideas);}
+    public Ideas addIdeas(Ideas ideas) {
+        ideas.setLikesCount(likeService.countLikesByIdea(ideas.getName()));
+        return ideaRepository.save(ideas);
+    }
 
     public Ideas getIdea(String name){
         return ideaRepository.findByName(name).get(0);
