@@ -200,4 +200,8 @@ public class IdeasBean {
         return "idea.xhtml?faces-redirect=true";
     }
 
+    public void userIdeas(String prop){
+        ideasList = ideaService.ideaByUsuario(prop);
+    }
+
 }
