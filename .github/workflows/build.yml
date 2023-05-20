@@ -52,34 +52,34 @@ jobs:
             target
           key: cache-v1-${{ hashFiles('**/src', '**/pom.xml', '**/.github') }}
 
-    deploy:
-      runs-on: ubuntu-latest
-      needs: build
-      environment:
-        name: 'Production'
-        url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    environment:
+      name: 'Production'
+      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
-      steps:
-        - uses: actions/checkout@v2
-        - uses: actions/cache@v3
-          with:
-            path: |
-              target
-            key: cache-v1-${{ hashFiles('**/src', '**/pom.xml', '**/.github') }}
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/cache@v3
+        with:
+          path: |
+            target
+          key: cache-v1-${{ hashFiles('**/src', '**/pom.xml', '**/.github') }}
 
-        - name: change war to jar extension
-          run: mv target/jorge-lab8.war target/app.jar
+      - name: change war to jar extension
+        run: mv target/boot-primefaces-integration-example-1.0-SNAPSHOT.war target/app.jar
 
-        - name: list
-          run: |
-            ls -la .
-            ls -la target
+      - name: list
+        run: |
+          ls -la .
+          ls -la target
 
-        - name: Deploy to Azure Web App
-          id: deploy-to-webapp
-          uses: azure/webapps-deploy@v2
-          with:
-            app-name: 'cvds-jorge-lab8'
-            slot-name: 'Production'
-            publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_A4C286D6CF0746918EBE9B799683C149 }}
-            package: 'target/app.jar'
+      - name: Deploy to Azure Web App
+        id: deploy-to-webapp
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: 'cvds-angora'
+          slot-name: 'Production'
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_A4C286D6CF0746918EBE9B799683C149 }}
+          package: 'target/app.jar'
