@@ -68,7 +68,7 @@ jobs:
           key: cache-v1-${{ hashFiles('**/src', '**/pom.xml', '**/.github') }}
 
       - name: change war to jar extension
-        run: mv target/jorge-lab8.war target/app.jar
+        run: mv target/boot-primefaces-integration-example-1.0-SNAPSHOT.war target/app.jar
 
       - name: list
         run: |
@@ -79,7 +79,7 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'cvds-jorge-lab8'
+          app-name: 'cvds-angora'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_A4C286D6CF0746918EBE9B799683C149 }}
           package: 'target/app.jar'
