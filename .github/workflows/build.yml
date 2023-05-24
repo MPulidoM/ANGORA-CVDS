@@ -1,7 +1,7 @@
 name: SonarCloud
 on:
   push:
-    branches: [main, juusechec-patch-1]
+    branches: [main]
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
