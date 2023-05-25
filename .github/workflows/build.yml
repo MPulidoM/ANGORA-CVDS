@@ -66,8 +66,10 @@ jobs:
             target
           key: cache-v2-${{ hashFiles('**/src', '**/pom.xml', '**/.github') }}
 
-      - name: change war to zip extension
-        run: mv target/boot-primefaces-integration-example-1.0-SNAPSHOT.war target/app.zip
+      - name: change war name and zip
+        run: |
+          mv target/boot-primefaces-integration-example-1.0-SNAPSHOT.war target/app.war
+          zip target/package.zip target/app.war
 
       - name: list
         run: |
@@ -81,4 +83,4 @@ jobs:
           app-name: 'cvds-angora'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_A4C286D6CF0746918EBE9B799683C149 }}
-          package: 'target/app.zip'
+          package: 'target/package.zip'
