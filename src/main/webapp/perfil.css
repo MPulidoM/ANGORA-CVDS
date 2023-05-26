@@ -244,3 +244,26 @@
 	font-family: 'Jost', sans-serif;
 	background: url("imagenes/blanco.jpg")no-repeat center/ cover;
 }
+.ideas .bt3{
+    font-weight: 700;
+    color: #ffffff;
+    padding: 2px 5px;
+    background: #283747;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.ideas .bt3:hover{
+    background: #191970;
+}
+
+.ui-datatable {
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.ui-datatable tbody td {
+    border-style: none !important;
+}
