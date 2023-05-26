@@ -14,15 +14,15 @@
                 <div class="avatar-perfil"><img src="/imagenes/cliente.jpg" alt="img"/> <a href="#" class="cambiar-foto">
                     <i class="fas fa-camera"></i> <span>Cambiar foto</span> </a></div>
                 <div class="datos-perfil">
-                    <h:outputText class="titulo-usuario" value="#{UserBean.getPersonalName()}"/>
-                    <p class="bio-usuario"></p>
+                    <h:outputText class="titulo-usuario" value="#{userBean.username}"/>
+                    <p class="bio-usuario" ></p>
                     <ul class="lista-perfil"></ul>
                 </div>
             </div>
             <div class="menu-perfil">
                 <ul>
                     <li><a href="#" title=""><i class="icono-perfil fas fa-bullhorn"></i> Publicaciones</a></li>
-                    <li><a href="#" title=""><i class="icono-perfil fas fa-info-circle"></i> Informacion</a></li>
+
                 </ul>
             </div>
         </div>
@@ -31,6 +31,7 @@
         <h:form>
             <div id="contenedor">
                 <h:dataTable id="table1" value="#{IdeasBean.groupedByUser}" var="item" border="1" class="content-table">
+
                     <f:facet name="header">
                         <h:outputText class="out" value="Mis ideas"/>
                     </f:facet>

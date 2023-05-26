@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
+<html xml:lang="es-419"
+      xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui"
       xmlns:f="http://java.sun.com/jsf/core">
@@ -51,10 +52,6 @@
                     </p:fieldset>
                 </p:scrollPanel>
                 <p:inputTextarea class="inputDes" value="#{comment}" placeholder="¿Quieres dejar tu comentario?"/>
-                <div class="butones">
-                    <p:commandButton value="Comentar" action="#{commentsService.addComment(ideasBean.name, userBean.username, comment)}" class="tn1" update="table1"/>
-                    <p:commandButton id="bt1" value=":3" actionListener="#{ideasService.changueLike(ideasService.getIdea(ideasBean.name), userBean.username)}" class="t2" update="bt1"/>
-                </div>
                 <p:dataTable id="table1" value="#{ideasBean.ideasList}" var="item" scrollable="true"  scrollHeight="150" >
                     <p:column class="centradas" headerText="Usuario" sortBy="#{item.name}">
                         <h:outputText  value="#{item.name}" />
