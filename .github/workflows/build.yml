@@ -4,7 +4,7 @@ on:
     branches:
       - main
   pull_request:
-    types: [opened, synchronize, reopened]
+    types: [ opened, synchronize, reopened ]
 jobs:
   build:
     name: Build and analyze
@@ -69,7 +69,7 @@ jobs:
 
       - name: change war name and zip
         run: |
-          mv target/jorge-lab8.war target/app.war
+          mv target/boot-primefaces-integration-example-1.0-SNAPSHOT.war target/app.war
           zip target/package.zip target/app.war
 
       - name: list
