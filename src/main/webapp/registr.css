@@ -59,7 +59,6 @@ label{
 .main .button{
     width: 90%;
     height: 40px;
-    background: #6d44b8;
     display: flex;
     margin: 10px auto;
     justify-content: center;
@@ -100,7 +99,6 @@ select{
     display: flex;
     width: 70%;
     height: 25px;
-    margin: 10px auto;
     font-size: 0.65em;
     background: #e0dede;
     border-radius: 5px;
