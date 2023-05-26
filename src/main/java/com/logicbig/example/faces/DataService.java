@@ -32,4 +32,12 @@ public class DataService {
         series.set("Administracion", ideasBean.groupedByIdeas("Administracion").size());
         return series;
     }
+
+    public BarChartSeries getBarChartDataStatus( BarChartSeries series) {
+        series.set("Pendiente", ideasBean.groupedByIdeas("Pendiente").size());
+        series.set("Aprobada", ideasBean.groupedByIdeas("Aprobada").size());
+        series.set("Revision", ideasBean.groupedByIdeas("Revision").size());
+        series.set("Denegada", ideasBean.groupedByIdeas("Denegada").size());
+        return series;
+    }
 }
