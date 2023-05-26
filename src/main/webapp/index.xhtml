@@ -16,12 +16,15 @@
 	<link rel="icon" href="/imagenes/logo.png"/>
 </h:head>
 <header class="header">
+	<a class="btn" href="#">
+		<p:commandButton class="pi pi-chevron-left pp"  action="#{userBean.perfileValidation}"/>
+	</a>
 	<div class="logo">
 		<div class="dropdown" >
 			<img src="/imagenes/cliente.jpg" alt="Perfil"/>
 			<div class="dropdown-content">
-				<a href="administrador.xhtml">Ver perfil</a>
-				<a href="registro.xhtml">Cerrar sesion</a>
+				<a class="pi pi-user" href="perfil.xhtml"> Ver perfil</a>
+				<a class="pi pi-sign-out" href="registro.xhtml"> Cerrar sesion</a>
 			</div>
 		</div>
 	</div>
@@ -30,10 +33,6 @@
 			<li><img src="/imagenes/logo3.png" alt="Perfil"/></li>
 		</ul>
 	</nav>
-	<a class="btn" href="#">
-		<p:commandButton class="button" value="Devolver" action="#{userBean.perfileValidation}"/>
-
-	</a>
 </header>
 
 <h:body>

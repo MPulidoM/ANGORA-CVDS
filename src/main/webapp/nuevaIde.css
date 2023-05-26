@@ -163,7 +163,6 @@ p{
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s ease 0s;
-
 }
 .idea input:focus{
   outline:0;
@@ -218,4 +217,7 @@ p{
 
 .dropdown:hover .dropbtn {
   background-color: #5593E9;
+}
+.pp>span{
+    display: none;
 }
