@@ -183,9 +183,6 @@
     .perfil-usuario .portada-perfil {
         height: 28rem;
     }
-    .perfil-usuario .menu-perfil ul {
-        flex-direction: column;
-    }
     .perfil-usuario .lista-perfil {
         display: block;
     }
@@ -193,6 +190,7 @@
         margin-top: 2rem;
     }
     .perfil-usuario .menu-perfil ul {
+        flex-direction: column;
         display: flex;
         list-style: none;
         margin-left: auto;
