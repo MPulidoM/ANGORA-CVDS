@@ -3,20 +3,21 @@ package com.logicbig.example.bean;
 import com.logicbig.example.data.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
 import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
 import java.util.Random;
 
-
 /**
  * @author Mariana Pulido Moreno
  * @author Erika Juliana Castro
+ * @author SantiagoNaranjo Melo
+ * @author Jordy Santiago Bautista
+ * @author Ximena Alejandra RodrigueZ
  */
 @Component
 @ManagedBean(name = "guessBean")
 @ApplicationScoped
-//@SessionScoped
+
 public class GuessBean {
     private int numeroAdivinar;
     private int intentos;

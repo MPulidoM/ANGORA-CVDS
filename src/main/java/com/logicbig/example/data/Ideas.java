@@ -3,10 +3,8 @@ package com.logicbig.example.data;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import java.lang.reflect.Array;
 import java.time.LocalDate;
-import java.util.Arrays;
-import java.util.List;
+
 
 @Entity
 public class Ideas {
