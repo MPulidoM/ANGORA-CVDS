@@ -5,11 +5,9 @@ import com.logicbig.example.data.Users;
 import org.primefaces.PrimeFaces;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
-import java.util.List;
 
 @Component
 @ManagedBean(name = "userBean")

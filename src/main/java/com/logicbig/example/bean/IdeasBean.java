@@ -1,16 +1,12 @@
 package com.logicbig.example.bean;
 
 import com.logicbig.example.data.*;
-import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
 import javax.faces.bean.ManagedBean;
 import javax.persistence.Column;
-import javax.persistence.Entity;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 @Component

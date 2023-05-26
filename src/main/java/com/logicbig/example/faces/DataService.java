@@ -1,9 +1,7 @@
 package com.logicbig.example.faces;
 
 import com.logicbig.example.bean.IdeasBean;
-import com.logicbig.example.data.Ideas;
 import org.primefaces.model.chart.BarChartSeries;
-import org.primefaces.model.chart.ChartSeries;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.LinkedHashMap;
