@@ -83,4 +83,8 @@ public class IdeasService {
         }
         return bandera;
     }
+
+    public List<Ideas> ideaByUsuario(String proponent){
+        return ideaRepository.findByProponent(proponent);
+    }
 }
