@@ -65,7 +65,6 @@
 }
 
 .header .btn button{
-    margin-left: 20px;
     font-weight: 700;
     color: #1b3039;
     padding: 2px 5px;
@@ -81,6 +80,7 @@
     color: #ffbc0e;
     transform: scale(1.1);
 }
+
 body{
     margin: 0 auto;
     padding: 0;
@@ -91,12 +91,29 @@ body{
     background: url("imagenes/blanco.jpg");
     background-size: cover;
 }
-.idea{
-    width: 1000px;
-    height: 1100px;
+.grafico1{
+    width: 600px;
+    height: 500px;
     position: absolute;
-    top: 150px;
-    left: 13%;
+    top: 120px;
+    left: 8%;
+    border-radius: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #fbfbfb;
+    border-style: solid;
+    border-width: 4px;
+    border-color: #283747;
+    padding-left: 30px;
+    opacity: .8;
+}
+
+.grafico2{
+    width: 580px;
+    height: 500px;
+    position: absolute;
+    top: 120px;
+    left: 55%;
     border-radius: 20px;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -108,87 +125,16 @@ body{
     opacity: .8;
 
 }
-.input{
-    background-color: #fbfbfb;
-    display: block;
-    width: 408px;
-    height: 40px;
-    border-radius: 5px;
-    border-style: solid;
-    border-width: 1px;
-    border-color: #283747;
-    margin-top: 10px;
-    padding-left: 10px;
-    margin-bottom: 20px;
-    display: block;
-}
-.inputDes{
-    background-color: #fbfbfb;
-    width: 890px;
-    height: 150px;
-    max-height: 150px;
-    resize: none;
-    border-radius: 5px;
-    border-style: solid;
-    border-width: 1px;
-    border-color: #283747;
-    margin-top: 10px;
-    padding-left: 10px;
-    margin-bottom: 20px;
-    padding-top: 20px;
-    display: block;
-
-}
-
-
 h1{
-    font-family: 'Luminari';
-    font-size: 60px;
+    font-size: 22px;
     text-align: center;
     padding-bottom: 15px;
     color: #34495E;
-    text-align: center;
 
 }
-p{
-    font-size: 14px;
-    color: #0e0e0e;
-}
-.button{
-    font-weight: 700;
-    color: #ffffff;
-    padding: 2px 5px;
-    background: #34495E;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.3s ease 0s;
 
-}
-.idea input:focus{
-    outline:0;
-    border: 1px solid #97d848;
-}
-.idea inputDes:focus{
-    outline:0;
-    border: 1px solid #97d848;
-}
 .dropdown{
     position: relative;
-}
-
-.dropbtn {
-    height: 70px;
-    width: 70px;
-    background-color: #266DD3;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border-radius: 6px;
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s;
-    border-radius:50px;
 }
 
 .dropdown-content {
@@ -197,7 +143,7 @@ p{
     background-color: #f9f9f9;
     border-radius: 6px;
     min-width: 160px;
-    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    box-shadow: rgba(17, 12, 46, 0.15) 0 48px 100px 0;
     z-index: 1;
 }
 
@@ -215,55 +161,6 @@ p{
 .dropdown:hover .dropdown-content {
     display: block;
 }
-
-.dropdown:hover .dropbtn {
-    background-color: #5593E9;
-}
-
-.idea .butones{
-    display: inline-block;
-}
-
-
-.idea .t2{
-    margin-left: 50px;
-    background: url("imagenes/he1.png") no-repeat;
-    background-size: 100%;
-    height: 60px;
-    width: 60px;
-    transition: all 0.3s;
-    border-radius:50px;
-    color:black;
-    border-color:black;
-    font-size: 0.5em;
-
-}
-
-.idea .tn1{
-    font-weight: 700;
-    color: #ffffff;
-    padding: 2px 5px;
-    background: #283747;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.3s ease 0s;
-}
-.idea .tn1:hover{
-    background: #191970;
-}
-.idea .t2:hover{
-    background: url("imagenes/he2.png") no-repeat;
-    background-size: 100%;
-    color: #FF2400;
-    border-radius:50px;
-    border-color:#FF2400;
-}
-
-.t2-value{
-    font-size: 1px;
-}
-
 .pp>span{
     display: none;
 }
