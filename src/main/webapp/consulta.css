@@ -126,9 +126,7 @@
 .buscar{
     border-radius: 20px;
 }
-.header{
-    background: url("imagenes/m.png")no-repeat center/ cover;
-}
+
 .dropdown{
     position: relative;
 }
