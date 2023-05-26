@@ -11,7 +11,11 @@
     <link rel="icon" href="/imagenes/logo.png"/>
 </h:head>
 <h:body>
+
     <section class="perfil-usuario">
+        <div class="btn" >
+            <p:commandButton class="pi pi-chevron-left pp"  action="#{userBean.perfileValidation}"/>
+        </div>
         <div class="contenedor-perfil">
             <div class="portada-perfil">
                 <div class="sombra"></div>
@@ -26,7 +30,6 @@
             <div class="menu-perfil">
                 <ul>
                     <li><a href="#" title=""><i class="icono-perfil fas fa-bullhorn"></i> Publicaciones</a></li>
-
                 </ul>
             </div>
         </div>

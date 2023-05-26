@@ -263,3 +263,7 @@ p{
 .t2-value{
     font-size: 1px;
 }
+
+.pp>span{
+    display: none;
+}
