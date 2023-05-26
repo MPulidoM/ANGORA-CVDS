@@ -41,12 +41,12 @@
 }
 .perfil-usuario .portada-perfil {
     display: block;
+    background: #283747;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
     height: 15rem;
-    background: #283747;
     margin-bottom: .5rem;
 }
 .perfil-usuario .avatar-perfil {
