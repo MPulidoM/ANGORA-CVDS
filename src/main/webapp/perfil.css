@@ -9,6 +9,7 @@
 
 .perfil-usuario {
     background: linear-gradient(#0B243B, transparent);
+    background: url("imagenes/blanco.jpg")no-repeat center/ cover;
     color: #333;
 }
 .perfil-usuario .sombra {
@@ -28,7 +29,7 @@
     width: 100%;
 }
 .contenedor-perfil {
-    max-width: 1024px;
+    max-width: 1250px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -44,13 +45,14 @@
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
-    height: 20rem;
+    height: 15rem;
+    background: #283747;
     margin-bottom: .5rem;
 }
 .perfil-usuario .avatar-perfil {
     display: block;
     width: 230px;
-    height: 230px;
+    height: 220px;
     position: absolute;
     bottom: -65px;
     left: 4rem;
@@ -240,4 +242,5 @@
 	align-items: center;
 	min-height: 60vh;
 	font-family: 'Jost', sans-serif;
+	background: url("imagenes/blanco.jpg")no-repeat center/ cover;
 }
