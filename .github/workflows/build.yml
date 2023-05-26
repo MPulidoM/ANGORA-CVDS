@@ -84,4 +84,4 @@ jobs:
           app-name: 'cvds-angora'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_A4C286D6CF0746918EBE9B799683C149 }}
-          package: 'target/app.zip'
+          package: 'target/package.zip'
