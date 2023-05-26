@@ -10,6 +10,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 @Component
@@ -174,14 +175,42 @@ public class IdeasBean {
         }
         return ideas;
     }
-    public List<Ideas> groupedByIdeas (String proponentArea){
+    public List<Ideas> groupedByIdeas (String parameter){
         List<Ideas> ideas = new ArrayList<>();
         for ( Ideas idea: ideaService.getAllIdeas()){
-            if ( idea.getProponentArea().equals(proponentArea)){
+            if ( idea.getProponentArea().equals(parameter)){
+                ideas.add(idea);
+            } else if (idea.getEstado().equals(parameter)) {
                 ideas.add(idea);
             }
         }
         return ideas;
+    }
+
+    public int maxIdea (boolean band){
+        List<Integer> lista = new ArrayList<Integer>();
+        if (band) {
+            lista.add( groupedByIdeas("Administracion").size());
+            lista.add( groupedByIdeas("Sociales").size());
+            lista.add( groupedByIdeas("Matematicas").size());
+            lista.add( groupedByIdeas("Sistemas").size());
+        }else {
+            lista.add( groupedByIdeas("Denegada").size());
+            lista.add( groupedByIdeas("Revision").size());
+            lista.add( groupedByIdeas("Aprobada").size());
+            lista.add( groupedByIdeas("Pendiente").size());
+        }
+        return maxFunction(lista);
+    }
+
+    public int maxFunction(List<Integer> list) {
+        int n =  0;
+        for (int i: list) {
+            if (i > n) {
+                n = i;
+            }
+        }
+        return n;
     }
 
     public void callbackSearch() {
