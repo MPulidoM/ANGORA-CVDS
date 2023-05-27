@@ -170,7 +170,6 @@ public class IdeasBean {
         if (keyWords != null) {
             for (Ideas idea : ideaService.getAllIdeas()) {
                 if (idea.getKeyWords().contains(keyWords)) {
-                    //System.out.println("-----------------------; " + keyWords + idea.getName());
                     ideas.add(idea);
                 }
             }
@@ -183,7 +182,6 @@ public class IdeasBean {
         if (topic != null) {
             for (Ideas idea : ideaService.getAllIdeas()) {
                 if (idea.getTopic().contains(topic)) {
-                    //System.out.println("-----------------------; " + topic + idea.getName());
                     ideas.add(idea);
                 }
             }
@@ -230,7 +228,6 @@ public class IdeasBean {
     }
 
     public void callbackSearch() {
-        //System.out.println("Valor: " + this.keyWords);
         this.setFilteredIdeas(this.consultKeywords());
     }
 
