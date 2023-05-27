@@ -122,7 +122,6 @@ public class UserBean {
         } else {
             userService.addUser(new Users(username, password, personalName, profile, rol, age, area, email));
         }
-
     }
 
     public String loginUser() {
