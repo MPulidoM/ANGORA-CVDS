@@ -191,10 +191,7 @@ public class IdeasBean {
     public List<Ideas> groupedByIdeas (String parameter){
         List<Ideas> ideas = new ArrayList<>();
         for ( Ideas idea: ideaService.getAllIdeas()){
-            if ( idea.getProponentArea().equals(parameter)){
-                ideas.add(idea);
-            }
-            else if (idea.getEstado().equals(parameter)) {
+            if ( idea.getProponentArea().equals(parameter) || idea.getEstado().equals(parameter)){
                 ideas.add(idea);
             }
         }
