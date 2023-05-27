@@ -1,6 +1,5 @@
 package com.logicbig.example;
 
-import java.util.logging.Logger;
 import com.logicbig.example.data.Ideas;
 import com.logicbig.example.data.IdeasService;
 import com.logicbig.example.data.Users;
@@ -48,12 +47,12 @@ public class Main{
 
     @Bean
     @DependsOn({"database"})
-    ServletRegistrationBean jsfServletRegistration (ServletContext servletContext) {
+    public ServletRegistrationBean<javax.servlet.Servlet> jsfServletRegistration(ServletContext servletContext) {
         //spring boot only works if this is set
         servletContext.setInitParameter("com.sun.faces.forceLoadConfiguration", Boolean.TRUE.toString());
 
         //registration
-        ServletRegistrationBean srb = new ServletRegistrationBean();
+        ServletRegistrationBean<javax.servlet.Servlet> srb = new ServletRegistrationBean<>();
         srb.setServlet(new FacesServlet());
         srb.setUrlMappings(Arrays.asList("*.xhtml"));
         srb.setLoadOnStartup(1);
