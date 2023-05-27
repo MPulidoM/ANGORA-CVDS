@@ -22,11 +22,6 @@ public class BarChartBean {
     private BarChartModel chartModel;
     private BarChartModel chartModelStatus;
 
-    @PostConstruct
-    public void init() {
-
-    }
-
     public void onAppReady (){
         chartModel = new BarChartModel();
         BarChartSeries s = new BarChartSeries();

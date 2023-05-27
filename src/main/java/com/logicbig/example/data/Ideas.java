@@ -31,7 +31,6 @@ public class Ideas {
 
     public Ideas(String name, String topic,String description, String proponent, String ocupacion, String keyWords, String proponentArea) {
         this.name = name;
-        this.topic = topic;
         this.description = description;
         this.topic = topic;
         this.fecha = LocalDate.now();
@@ -42,7 +41,6 @@ public class Ideas {
         this.estado = "Pendiente";
         this.edit = false;
         this.likesCount = 0;
-
     }
 
     public String getName() {
