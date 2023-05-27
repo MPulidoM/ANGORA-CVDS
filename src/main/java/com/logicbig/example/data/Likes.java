@@ -4,7 +4,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.time.LocalDate;
 import java.util.Objects;
 
 @Entity
@@ -32,11 +31,11 @@ public class Likes {
         this.idd = idd;
     }
 
-    public String getDescription() {
+    public String getNameIdea() {
         return nameIdea;
     }
 
-    public void setDescription(String description) {
+    public void setNameIdea(String nameIdea) {
         this.nameIdea = nameIdea;
     }
 

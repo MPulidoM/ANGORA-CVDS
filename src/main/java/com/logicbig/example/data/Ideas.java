@@ -3,10 +3,8 @@ package com.logicbig.example.data;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import java.lang.reflect.Array;
 import java.time.LocalDate;
-import java.util.Arrays;
-import java.util.List;
+
 
 @Entity
 public class Ideas {
@@ -33,7 +31,6 @@ public class Ideas {
 
     public Ideas(String name, String topic,String description, String proponent, String ocupacion, String keyWords, String proponentArea) {
         this.name = name;
-        this.topic = topic;
         this.description = description;
         this.topic = topic;
         this.fecha = LocalDate.now();
@@ -44,7 +41,6 @@ public class Ideas {
         this.estado = "Pendiente";
         this.edit = false;
         this.likesCount = 0;
-
     }
 
     public String getName() {

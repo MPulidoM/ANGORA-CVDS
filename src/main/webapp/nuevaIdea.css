@@ -92,11 +92,11 @@ body{
   background-size: cover;
 }
 .idea{
+    position: absolute;
+    top: 150px;
+    left: 13%;
   width: 950px;
   height: 680px;
-  position: absolute;
-  top: 150px;
-  left: 13%;
   border-radius: 20px;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -109,8 +109,6 @@ body{
 
 }
 .input{
-  background-color: #fbfbfb;
-  display: block;
   width: 408px;
   height: 40px;
   border-radius: 5px;
@@ -120,9 +118,8 @@ body{
   margin-top: 10px;
   padding-left: 10px;
   margin-bottom: 20px;
-  display: block;
-  float: center;
 }
+
 .inputDes{
    background-color: #fbfbfb;
    width: 890px;
@@ -138,7 +135,6 @@ body{
    margin-bottom: 20px;
    padding-top: 20px;
    display: block;
-   float: center;
 
 }
 
@@ -163,13 +159,12 @@ p{
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s ease 0s;
-
 }
 .idea input:focus{
   outline:0;
   border: 1px solid #97d848;
 }
-.idea inputDes:focus{
+.idea .inputDes:focus{
   outline:0;
   border: 1px solid #97d848;
 }
@@ -177,19 +172,6 @@ p{
     position: relative;
 }
 
-.dropbtn {
-  height: 70px;
-  width: 70px;
-  background-color: #266DD3;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border-radius: 6px;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s;
-  border-radius:50px;
-}
 
 .dropdown-content {
   display: none;
@@ -197,7 +179,7 @@ p{
   background-color: #f9f9f9;
   border-radius: 6px;
   min-width: 160px;
-  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  box-shadow: rgba(17, 12, 46, 0.15) 0 48px 100px 0;
   z-index: 1;
 }
 
@@ -218,4 +200,7 @@ p{
 
 .dropdown:hover .dropbtn {
   background-color: #5593E9;
+}
+.pp>span{
+    display: none;
 }

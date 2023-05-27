@@ -6,4 +6,6 @@ import java.util.List;
 @Repository
 public interface IdeaRepository extends JpaRepository<Ideas, Long> {
     List<Ideas> findByName(String name);
+
+    List<Ideas> findByProponent(String proponent);
 }

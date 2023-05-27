@@ -4,7 +4,7 @@ on:
     branches:
       - main
   pull_request:
-    types: [opened, synchronize, reopened]
+    types: [ opened, synchronize, reopened ]
 jobs:
   build:
     name: Build and analyze
@@ -35,3 +35,53 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=MPulidoM_ANGORA-CVDS -Pcoverage
+
+      - uses: actions/checkout@v2
+
+      - name: Set up Java version
+        uses: actions/setup-java@v1
+        with:
+          java-version: '8'
+
+      - name: Build with Maven
+        run: mvn clean package spring-boot:repackage
+
+      - uses: actions/cache@v3
+        with:
+          path: |
+            target
+          key: cache-v1-${{ hashFiles('**/src', '**/pom.xml', '**/.github') }}
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    environment:
+      name: 'Production'
+      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/cache@v3
+        with:
+          path: |
+            target
+          key: cache-v1-${{ hashFiles('**/src', '**/pom.xml', '**/.github') }}
+
+      - name: change war name and zip
+        run: |
+          mv target/boot-primefaces-integration-example-1.0-SNAPSHOT.war target/app.war
+          zip target/package.zip target/app.war
+
+      - name: list
+        run: |
+          ls -la .
+          ls -la target
+
+      - name: Deploy to Azure Web App
+        id: deploy-to-webapp
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: 'cvds-angora'
+          slot-name: 'Production'
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_A4C286D6CF0746918EBE9B799683C149 }}
+          package: 'target/package.zip'

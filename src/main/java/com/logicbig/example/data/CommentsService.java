@@ -1,7 +1,6 @@
 package com.logicbig.example.data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,7 +22,7 @@ public class CommentsService {
         return commentsRepository.findAll();
     }
     public Comments updateComments(Comments comments){
-        if(commentsRepository.findByIdd(comments.getIdd()).size() == 0){
+        if(commentsRepository.findByIdd(comments.getIdd()).isEmpty()){
             return commentsRepository.save(comments);
         }
         return null;
