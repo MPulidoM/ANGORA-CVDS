@@ -1,12 +1,10 @@
 package Test.java.com.logicbig.example.bean;
 
-import com.logicbig.example.bean.UserBean;
 import com.logicbig.example.data.*;
 import com.logicbig.example.faces.PrimeFacesWrapper;
 import org.junit.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.runner.RunWith;
-import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
@@ -29,7 +27,6 @@ public class LikesTest {
 
 
     private Likes likes;
-    private long idd;
 
     @Test
     public void getIddOnLikes() {
