@@ -69,7 +69,7 @@ jobs:
 
       - name: change war name and zip
         run: |
-          mv target/boot-primefaces-integration-example-1.0-SNAPSHOT.war target/app.war
+          mv target/boot-primefaces-integration-example-0.0.1-SNAPSHOT.war target/app.war
           zip target/package.zip target/app.war
 
       - name: list
