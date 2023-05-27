@@ -30,11 +30,19 @@ public class UserBean {
     private String email;
 
     public UserBean() {
-        this.username = "";
-        this.password = "";
-        this.personalName = "";
-        this.profile = "";
-        this.rol = "";
+        username = "";
+        password = "";
+        personalName = "";
+        profile = "";
+        rol = "";
+    }
+
+    public UserService getUserService() {
+        return userService;
+    }
+
+    public void setUserService(UserService userService) {
+        this.userService = userService;
     }
 
     public String getUsername() {
@@ -42,7 +50,7 @@ public class UserBean {
     }
 
     public void setUsername(String username) {
-        this.username = username;
+        UserBean.username = username;
     }
 
     public String getPassword() {
@@ -74,7 +82,7 @@ public class UserBean {
     }
 
     public void setRol(String rol) {
-        this.rol = rol;
+        UserBean.rol = rol;
     }
 
     public int getAge() {
@@ -90,7 +98,7 @@ public class UserBean {
     }
 
     public void setArea(String area) {
-        this.area = area;
+        UserBean.area = area;
     }
 
     public String getEmail() {
