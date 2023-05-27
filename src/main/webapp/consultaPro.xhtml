@@ -59,7 +59,16 @@
                         <p:column  class="centradas" sortBy="#{item.fecha}" headerText="Fecha"  >
                             <h:outputText value="#{item.fecha}" />
                         </p:column>
-                        <p:column  class="centradas" sortBy="#{item.estado}" headerText="Estado" >
+                        <p:column  field="estado" class="centradas" sortBy="#{item.estado}" headerText="Estado" filterMatchMode="exact">
+                            <f:facet name="filter">
+                                <p:selectOneMenu onchange="PF('customersTable').filter()" styleClass="ui-custom-filter">
+                                    <f:selectItem itemLabel="Cambie el estado" selected="selected" itemDisable="true"/>
+                                    <f:selectItem itemValue="Pendiente" itemLabel="Pendiente"/>
+                                    <f:selectItem itemValue="Revision" itemLabel="Revision"/>
+                                    <f:selectItem itemValue="Aprobada" itemLabel="Aprobada"/>
+                                    <f:selectItem itemValue="Denegada" itemLabel="Denegada"/>
+                                </p:selectOneMenu>
+                            </f:facet>
                             <h:outputText   value="#{item.estado}" />
                         </p:column>
                         <p:column>
