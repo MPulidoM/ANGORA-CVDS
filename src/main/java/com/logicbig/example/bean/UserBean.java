@@ -21,7 +21,7 @@ import javax.faces.context.FacesContext;
 @Component
 @ManagedBean(name = "userBean")
 public class UserBean {
-    private final static String MESSAJE = "messaje";
+    private static final String MESSAJE = "messaje";
     @Autowired
     private UserService userService;
     // Nombre que tengra el usuario dentro de la aplicacion y con el cual se identifica (ID)
@@ -38,11 +38,9 @@ public class UserBean {
     private String email;
 
     public UserBean() {
-        username = "";
         password = "";
         personalName = "";
         profile = "";
-        rol = "";
     }
 
     public UserService getUserService() {
@@ -53,11 +51,11 @@ public class UserBean {
         this.userService = userService;
     }
 
-    public String getUsername() {
+    public static String getUsername() {
         return username;
     }
 
-    public void setUsername(String username) {
+    public static void setUsername(String username) {
         UserBean.username = username;
     }
 
@@ -85,11 +83,11 @@ public class UserBean {
         this.profile = profile;
     }
 
-    public String getRol() {
+    public static String getRol() {
         return rol;
     }
 
-    public void setRol(String rol) {
+    public static void setRol(String rol) {
         UserBean.rol = rol;
     }
 
