@@ -57,5 +57,6 @@ public class UserService {
         users.setProfile(profile);
         changueEdit(users);
     }
+    public void deleteAll() { userRepository.deleteAll(); }
 
 }

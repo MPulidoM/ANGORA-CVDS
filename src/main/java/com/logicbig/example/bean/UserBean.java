@@ -111,6 +111,16 @@ import java.util.List;
        }
 
     }
+    public void addUser(String username) {
+
+        if (userService.userExist(username)){
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_FATAL,"ERROR","Este usuario ya existe"));
+            PrimeFaces.current().ajax().update("messages");
+        } else {
+            userService.addUser(new Users(username, password, personalName, profile,rol, age, area, email));
+        }
+
+    }
     public String loginUser(){
         String bandera = "#{facesContext.getExternalContext().redirect(request.getRequestURI())}" ;
         if (userService.userExist(username)) {
