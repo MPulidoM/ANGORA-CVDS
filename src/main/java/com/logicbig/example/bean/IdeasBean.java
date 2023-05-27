@@ -1,17 +1,21 @@
 package com.logicbig.example.bean;
 
 import com.logicbig.example.data.*;
-import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
 import javax.faces.bean.ManagedBean;
 import javax.persistence.Column;
-import javax.persistence.Entity;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author Mariana Pulido Moreno
+ * @author Erika Juliana Castro
+ * @author SantiagoNaranjo Melo
+ * @author Jordy Santiago Bautista
+ * @author Ximena Alejandra RodrigueZ
+ */
 @Component
 @ManagedBean(name = "ideasBean")
 public class IdeasBean {
@@ -43,6 +47,14 @@ public class IdeasBean {
 
     public void setIdeaService(IdeasService ideaService) {
         this.ideaService = ideaService;
+    }
+
+    public UserService getUserService() {
+        return userService;
+    }
+
+    public void setUserService(UserService userService) {
+        this.userService = userService;
     }
 
     public String getUse() {
@@ -132,6 +144,10 @@ public class IdeasBean {
     public void setEstado(String estado) {
         this.estado = estado;
     }
+
+    public List<Ideas> getFilteredIdeas() {
+        return filteredIdeas;
+    }
     public void setFilteredIdeas(List<Ideas> filteredIdeas) {
         this.filteredIdeas = filteredIdeas;
     }
@@ -154,7 +170,7 @@ public class IdeasBean {
         if (keyWords != null) {
             for (Ideas idea : ideaService.getAllIdeas()) {
                 if (idea.getKeyWords().contains(keyWords)) {
-                    System.out.println("-----------------------; " + keyWords + idea.getName());
+                    //System.out.println("-----------------------; " + keyWords + idea.getName());
                     ideas.add(idea);
                 }
             }
@@ -167,25 +183,54 @@ public class IdeasBean {
         if (topic != null) {
             for (Ideas idea : ideaService.getAllIdeas()) {
                 if (idea.getTopic().contains(topic)) {
-                    System.out.println("-----------------------; " + topic + idea.getName());
+                    //System.out.println("-----------------------; " + topic + idea.getName());
                     ideas.add(idea);
                 }
             }
         }
         return ideas;
     }
-    public List<Ideas> groupedByIdeas (String proponentArea){
+    public List<Ideas> groupedByIdeas (String parameter){
         List<Ideas> ideas = new ArrayList<>();
         for ( Ideas idea: ideaService.getAllIdeas()){
-            if ( idea.getProponentArea().equals(proponentArea)){
+            if ( idea.getProponentArea().equals(parameter)){
+                ideas.add(idea);
+            }
+            else if (idea.getEstado().equals(parameter)) {
                 ideas.add(idea);
             }
         }
         return ideas;
     }
 
+    public int maxIdea (boolean band){
+        List<Integer> lista = new ArrayList<>();
+        if (band) {
+            lista.add( groupedByIdeas("Administracion").size());
+            lista.add( groupedByIdeas("Sociales").size());
+            lista.add( groupedByIdeas("Matematicas").size());
+            lista.add( groupedByIdeas("Sistemas").size());
+        }else {
+            lista.add( groupedByIdeas("Denegada").size());
+            lista.add( groupedByIdeas("Revision").size());
+            lista.add( groupedByIdeas("Aprobada").size());
+            lista.add( groupedByIdeas("Pendiente").size());
+        }
+        return maxFunction(lista);
+    }
+
+    public int maxFunction(List<Integer> list) {
+        int n =  0;
+        for (int i: list) {
+            if (i > n) {
+                n = i;
+            }
+        }
+        return n;
+    }
+
     public void callbackSearch() {
-        System.out.println("Valor: " + this.keyWords);
+        //System.out.println("Valor: " + this.keyWords);
         this.setFilteredIdeas(this.consultKeywords());
     }
 
@@ -198,6 +243,10 @@ public class IdeasBean {
         this.topic = ideas.getTopic();
         this.fecha = ideas.getFecha();
         return "idea.xhtml?faces-redirect=true";
+    }
+
+    public void userIdeas(String prop){
+        ideasList = ideaService.ideaByUsuario(prop);
     }
 
 }

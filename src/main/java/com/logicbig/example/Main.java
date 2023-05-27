@@ -1,5 +1,6 @@
 package com.logicbig.example;
 
+import java.util.logging.Logger;
 import com.logicbig.example.data.Ideas;
 import com.logicbig.example.data.IdeasService;
 import com.logicbig.example.data.Users;
@@ -11,10 +12,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.DependsOn;
-
 import javax.faces.webapp.FacesServlet;
 import javax.servlet.ServletContext;
-import java.time.LocalDate;
 import java.util.Arrays;
 
 @SpringBootApplication
@@ -29,9 +28,9 @@ public class Main{
     }
 
     @Bean(name = "database")
-    public CommandLineRunner run() throws Exception {
+    public CommandLineRunner run() {
         return (args) -> {
-            System.out.println("Adding Configuration....\n");
+            //System.out.println("Adding users and ideas....\n");
             userService.addUser(new Users("AdminAngora","Ad101Angora","Carlos Leal","Administrador","Empleado",45,"Sistemas","Adminastor.Angora@gmail.com"));
             userService.addUser(new Users("Mpulido23","lhanna.23","Mariana Pulido","Proponente","Estudiante",20,"Matematicas","mpm@gmail.com"));
             userService.addUser(new Users("AmbientalINC.ADMIN","pro.ambiental","Alberto Pardo","Cliente","Gerente de Proyectos ",39,"Deporte","ProyectosPlaneta@ambientalINC.com"));
@@ -45,8 +44,8 @@ public class Main{
             ideasService.addIdeas(new Ideas("computadores","Tecnología","Campaña Tecnología","Mpulido23","estudiante","mundo,tecnologia","Reciclaje"));
             ideasService.addIdeas(new Ideas("Tableros","Educación","Campaña de Educación","Mpulido23","estudiante","niños, estudiantes","Reciclaje"));
             ideasService.addIdeas(new Ideas("Muebles","Infraestructura","Campaña de nuevos muebles","Mpulido23","estudiante","muebles,nuevos, verde, ecofriendly","Reciclaje"));
-            System.out.println("\nGetting all configs....");
-            userService.getAllUsers().forEach(configuration -> System.out.println(configuration));
+            /**System.out.println("\nUser list....");
+            userService.getAllUsers().forEach(configuration -> System.out.println(configuration));**/
         };
     }
 

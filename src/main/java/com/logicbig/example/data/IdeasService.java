@@ -29,7 +29,7 @@ public class IdeasService {
         return ideaRepository.findAll();
     }
     public Ideas updateIdeas(Ideas ideas){
-        if(ideaRepository.findByName(ideas.getName()).size() == 0){
+        if(ideaRepository.findByName(ideas.getName()).isEmpty()){
             return ideaRepository.save(ideas);
         }
         return null;
@@ -75,12 +75,16 @@ public class IdeasService {
     public boolean userLike(String ideaName,String username) {
         boolean bandera = false;
         for (Likes i: likeService.getAllLikes() ){
-            if (i.getUsername().equals(username) && i.getDescription().equals(ideaName)) {
+            if (i.getUsername().equals(username) && i.getNameIdea().equals(ideaName)) {
                 likeService.deleteLike(i.getIdd());
                 bandera = true;
                 break;
             }
         }
         return bandera;
+    }
+
+    public List<Ideas> ideaByUsuario(String proponent){
+        return ideaRepository.findByProponent(proponent);
     }
 }
