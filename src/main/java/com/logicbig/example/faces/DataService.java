@@ -1,7 +1,6 @@
 package com.logicbig.example.faces;
 
 import com.logicbig.example.bean.IdeasBean;
-import org.primefaces.model.chart.BarChartSeries;
 import org.primefaces.model.chart.ChartSeries;
 import org.primefaces.model.charts.bar.BarChartModel;
 import org.springframework.beans.factory.annotation.Autowired;

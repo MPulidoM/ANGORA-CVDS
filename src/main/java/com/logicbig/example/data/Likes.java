@@ -31,11 +31,11 @@ public class Likes {
         this.idd = idd;
     }
 
-    public String getDescription() {
+    public String getNameIdea() {
         return nameIdea;
     }
 
-    public void setDescription(String description) {
+    public void setNameIdea(String nameIdea) {
         this.nameIdea = nameIdea;
     }
 

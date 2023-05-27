@@ -21,7 +21,7 @@ public class LikeService {
         return likeRepository.findAll();
     }
     public Likes updateLikes(Likes likes){
-        if(likeRepository.findByIdd(likes.getIdd()).size() == 0){
+        if(likeRepository.findByIdd(likes.getIdd()).isEmpty()){
             return likeRepository.save(likes);
         }
         return null;
@@ -37,7 +37,7 @@ public class LikeService {
     public int countLikesByIdea(String nameIdea){
         int numero = 0;
         for (Likes i: getAllLikes()){
-            if (i.getDescription().equals(nameIdea)){
+            if (i.getNameIdea().equals(nameIdea)){
                 numero++;
             }
         }
