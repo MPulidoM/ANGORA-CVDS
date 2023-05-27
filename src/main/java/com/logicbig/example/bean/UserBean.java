@@ -5,13 +5,15 @@ import com.logicbig.example.data.Users;
 import org.primefaces.PrimeFaces;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
 
 @Component
 @ManagedBean(name = "userBean")
-    public class UserBean  {
+public class UserBean {
+    private final static String MESSAJE = "messaje";
     @Autowired
     private UserService userService;
     // Nombre que tengra el usuario dentro de la aplicacion y con el cual se identifica (ID)
@@ -100,38 +102,36 @@ import javax.faces.context.FacesContext;
     }
 
     public void addUser() {
-
-       if (userService.userExist(username)){
-           FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_FATAL,"ERROR","Este usuario ya existe"));
-           PrimeFaces.current().ajax().update("messages");
-       } else {
-           userService.addUser(new Users(username, password, personalName, profile,rol, age, area, email));
-       }
-
-    }
-    public String loginUser(){
-        String bandera = "#{facesContext.getExternalContext().redirect(request.getRequestURI())}" ;
         if (userService.userExist(username)) {
-            if(userService.getUser(username).getPassword().equals(password)){
-                bandera = perfileValidation();
-            }else {
-                FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN,"CLAVE","Clave incorrecta"));
-                PrimeFaces.current().ajax().update("messages");
-            }
-        } else {
-            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,"USUARIO","Usuario no valido"));
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_FATAL, "ERROR", "Este usuario ya existe"));
             PrimeFaces.current().ajax().update("messages");
+        } else {
+            userService.addUser(new Users(username, password, personalName, profile, rol, age, area, email));
         }
 
+    }
+
+    public String loginUser() {
+        String bandera = "#{facesContext.getExternalContext().redirect(request.getRequestURI())}";
+        if (userService.userExist(username)) {
+            if (userService.getUser(username).getPassword().equals(password)) {
+                bandera = perfileValidation();
+            } else {
+                FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN, "CLAVE", "Clave incorrecta"));
+                PrimeFaces.current().ajax().update(MESSAJE);
+            }
+        } else {
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "USUARIO", "Usuario no valido"));
+            PrimeFaces.current().ajax().update(MESSAJE);
+        }
         return bandera;
     }
 
-    public String perfileValidation (){
+    public String perfileValidation() {
         String perfile = userService.getUser(username).getProfile();
-        if ( perfile.equals("Proponente")) {
+        if (perfile.equals("Proponente")) {
             return "consultaPro.xhtml?faces-redirect=true";
-        }
-        else if (perfile.equals("Administrador")) {
+        } else if (perfile.equals("Administrador")) {
             return "administrador.xhtml?faces-redirect=true";
         } else {
             return "consulta.xhtml?faces-redirect=true";
