@@ -30,7 +30,7 @@ public class UserService {
         return userRepository.findAll();
     }
     public Users updateUsers(Users users){
-        if(userRepository.findByUsername(users.getUsername()).size() == 0){
+        if(userRepository.findByUsername(users.getUsername()).isEmpty()){
             return userRepository.save(users);
         }
         return null;
