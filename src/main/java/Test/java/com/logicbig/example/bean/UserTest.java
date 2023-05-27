@@ -16,6 +16,7 @@ import javax.faces.context.FacesContextWrapper;
 
 
 import static junit.framework.TestCase.*;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
@@ -38,10 +39,13 @@ public class UserTest {
     private String username;
 
     @Test
-    public void getProfileOnString() {
+    public void usersGetUsername() {
         user = new Users("Mpulido21", "lhanna.23", "Mariana Pulido", "Proponente", "Estudiante", 20, "Matematicas", "mpm@gmail.com");
         assertEquals("Mpulido21", user.getUsername());
     }
+
+
+
 
 
 }

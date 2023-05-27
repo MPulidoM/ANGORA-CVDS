@@ -125,6 +125,7 @@ import java.util.List;
         String bandera = "#{facesContext.getExternalContext().redirect(request.getRequestURI())}" ;
         if (userService.userExist(username)) {
             if(userService.getUser(username).getPassword().equals(password)){
+
                 bandera = perfileValidation();
             }else {
                 FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN,"CLAVE","Clave incorrecta"));
