@@ -22,7 +22,7 @@ import java.util.Map;
 import java.util.Set;
 
 public class Mocks {
-    public FacesContext facesContextMock;
+    private FacesContext facesContextMock;
 
     PrimeFaces primeFaces;
 

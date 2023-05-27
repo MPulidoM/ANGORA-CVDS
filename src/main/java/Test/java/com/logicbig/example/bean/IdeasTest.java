@@ -1,7 +1,6 @@
 package Test.java.com.logicbig.example.bean;
 
 import com.logicbig.example.bean.IdeasBean;
-import com.logicbig.example.bean.UserBean;
 import com.logicbig.example.data.*;
 import com.logicbig.example.faces.PrimeFacesWrapper;
 import org.junit.Test;
@@ -27,7 +26,6 @@ public class IdeasTest {
 
     @Mock // Esta es la clase real
     private IdeasService ideasService;
-    private IdeaRepository ideaRepository;
 
     @InjectMocks // Esta es la clase real
     private IdeasBean IdeasBean;
