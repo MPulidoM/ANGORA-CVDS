@@ -176,7 +176,8 @@ public class IdeasBean {
         for ( Ideas idea: ideaService.getAllIdeas()){
             if ( idea.getProponentArea().equals(parameter)){
                 ideas.add(idea);
-            } else if (idea.getEstado().equals(parameter)) {
+            }
+            else if (idea.getEstado().equals(parameter)) {
                 ideas.add(idea);
             }
         }
@@ -184,7 +185,7 @@ public class IdeasBean {
     }
 
     public int maxIdea (boolean band){
-        List<Integer> lista = new ArrayList<Integer>();
+        List<Integer> lista = new ArrayList<>();
         if (band) {
             lista.add( groupedByIdeas("Administracion").size());
             lista.add( groupedByIdeas("Sociales").size());
