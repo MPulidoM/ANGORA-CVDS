@@ -9,6 +9,13 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author Mariana Pulido Moreno
+ * @author Erika Juliana Castro
+ * @author SantiagoNaranjo Melo
+ * @author Jordy Santiago Bautista
+ * @author Ximena Alejandra RodrigueZ
+ */
 @Component
 @ManagedBean(name = "ideasBean")
 public class IdeasBean {
@@ -40,6 +47,14 @@ public class IdeasBean {
 
     public void setIdeaService(IdeasService ideaService) {
         this.ideaService = ideaService;
+    }
+
+    public UserService getUserService() {
+        return userService;
+    }
+
+    public void setUserService(UserService userService) {
+        this.userService = userService;
     }
 
     public String getUse() {
@@ -129,6 +144,10 @@ public class IdeasBean {
     public void setEstado(String estado) {
         this.estado = estado;
     }
+
+    public List<Ideas> getFilteredIdeas() {
+        return filteredIdeas;
+    }
     public void setFilteredIdeas(List<Ideas> filteredIdeas) {
         this.filteredIdeas = filteredIdeas;
     }
@@ -151,7 +170,7 @@ public class IdeasBean {
         if (keyWords != null) {
             for (Ideas idea : ideaService.getAllIdeas()) {
                 if (idea.getKeyWords().contains(keyWords)) {
-                    System.out.println("-----------------------; " + keyWords + idea.getName());
+                    //System.out.println("-----------------------; " + keyWords + idea.getName());
                     ideas.add(idea);
                 }
             }
@@ -164,7 +183,7 @@ public class IdeasBean {
         if (topic != null) {
             for (Ideas idea : ideaService.getAllIdeas()) {
                 if (idea.getTopic().contains(topic)) {
-                    System.out.println("-----------------------; " + topic + idea.getName());
+                    //System.out.println("-----------------------; " + topic + idea.getName());
                     ideas.add(idea);
                 }
             }
@@ -211,7 +230,7 @@ public class IdeasBean {
     }
 
     public void callbackSearch() {
-        System.out.println("Valor: " + this.keyWords);
+        //System.out.println("Valor: " + this.keyWords);
         this.setFilteredIdeas(this.consultKeywords());
     }
 

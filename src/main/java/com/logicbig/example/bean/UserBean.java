@@ -10,6 +10,14 @@ import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
 
+/**
+ * @author Mariana Pulido Moreno
+ * @author Erika Juliana Castro
+ * @author SantiagoNaranjo Melo
+ * @author Jordy Santiago Bautista
+ * @author Ximena Alejandra RodrigueZ
+ */
+
 @Component
 @ManagedBean(name = "userBean")
 public class UserBean {
