@@ -51,11 +51,11 @@ public class UserBean {
         this.userService = userService;
     }
 
-    public static String getUsername() {
+    public String getUsername() {
         return username;
     }
 
-    public static void setUsername(String username) {
+    public void setUsername(String username) {
         UserBean.username = username;
     }
 
@@ -83,11 +83,11 @@ public class UserBean {
         this.profile = profile;
     }
 
-    public static String getRol() {
+    public String getRol() {
         return rol;
     }
 
-    public static void setRol(String rol) {
+    public void setRol(String rol) {
         UserBean.rol = rol;
     }
 
